@@ -1,24 +1,28 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, FlatList } from 'react-native';
+import { Text } from 'react-native-paper';
+import Badge from '../components/badge';
+import CityList from '../components/cityList';
+import CityListItem from '../components/cityListItem';
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import PropertyList from '../components/propertyList';
+
+import { View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <CityList />
+      {/* <CityListItem city='الرياض' count={250}/> */}
+      <PropertyList title={'أضيفت مؤخرا'} label={'للبيع'}/>
+      <PropertyList title={'أضيفت مؤخرا'} label={'للايجار'}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 20
   },
   title: {
     fontSize: 20,
