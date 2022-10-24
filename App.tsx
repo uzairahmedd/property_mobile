@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { I18n } from 'i18n-js';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 

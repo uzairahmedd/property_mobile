@@ -1,14 +1,20 @@
-import { ImageBackground, View, StyleSheet } from 'react-native';
+import { ImageBackground, View, StyleSheet, Touchable, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 import Badge from '../badge';
 
-const ListItem = () => {
+type Props = {
+	style?: {};
+}
 
+const ListItem = ({ style }: Props) => {
+	const navigation = useNavigation()
 	return (
 		<>
-			<View style={{ marginLeft: 10 }}>
+			<TouchableOpacity style={{ marginLeft: 10 }} onPress={() => navigation.navigate('PropertyDetail')}>
 				<ImageBackground
-					style={styles.imageContainer}
+					style={[styles.imageContainer, style]}
+					imageStyle={{borderRadius: 10}}
 					source={require('../../assets/images/sample-property.png')}>
 					<Badge text={'للبيع'} style={{ backgroundColor: '#2894CF' }} />
 					<Badge text={'متاح'} style={{ backgroundColor: '#292071', marginTop: 0 }} />
@@ -21,7 +27,7 @@ const ListItem = () => {
 				<View style={{ padding: 5 }}>
 					<Text style={{ fontSize: 18 }}>فيلا إطلالة مميزة في حي سكني هادئ</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 		</>
 	)
 }
