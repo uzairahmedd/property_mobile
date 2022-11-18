@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react'
 import {
   View,
   Text,
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions,
-} from "react-native";
-import { Svg, Path } from "react-native-svg";
+  Dimensions
+} from 'react-native'
+import { Svg, Path } from 'react-native-svg'
 
-import { useFonts } from "@expo-google-fonts/dev";
+import { useFonts } from '@expo-google-fonts/dev'
 
 export default function FloorModel() {
-  let [fontsLoaded] = useFonts({});
+  let [fontsLoaded] = useFonts({})
 
   return (
     <ScrollView
       bounces={false}
       showsVerticalScrollIndicator={false}
-      style={{ height: Dimensions.get("window").height }}
+      style={{ height: Dimensions.get('window').height }}
     >
       <View style={stylesheet.style_FloorModel}>
         <View style={stylesheet.style_Group_458}>
@@ -26,20 +26,20 @@ export default function FloorModel() {
           <View
             style={[
               stylesheet.style_______________,
-              { display: "flex", flexDirection: "row", alignItems: "center" },
+              { display: 'flex', flexDirection: 'row', alignItems: 'center' }
             ]}
           >
             <Text
               style={[
                 stylesheet.style_______________,
                 {
-                  position: "relative",
+                  position: 'relative',
                   // flexGrow: 1,
                   left: 0,
                   top: 0,
                   // height: "auto",
-                  transform: [{ translateX: 0 }, { translateY: 0 }],
-                },
+                  transform: [{ translateX: 0 }, { translateY: 0 }]
+                }
               ]}
             >
               رقم دور العقار
@@ -51,23 +51,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_1,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_1,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   1
@@ -79,23 +79,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_2,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_2,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   2
@@ -107,23 +107,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_3,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_3,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   3
@@ -135,23 +135,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_4,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_4,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   4
@@ -163,23 +163,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_5,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_5,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   5
@@ -191,23 +191,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_6,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_6,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   6
@@ -219,23 +219,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_7,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_7,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   7
@@ -247,23 +247,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_8,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_8,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   8
@@ -277,23 +277,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_9,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_9,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   9
@@ -305,23 +305,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_10,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_10,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   10
@@ -333,23 +333,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_11,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_11,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   11
@@ -361,23 +361,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_12,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_12,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   12
@@ -389,23 +389,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_13,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_13,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   13
@@ -417,23 +417,23 @@ export default function FloorModel() {
                 style={[
                   stylesheet.style_14,
                   {
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  },
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                  }
                 ]}
               >
                 <Text
                   style={[
                     stylesheet.style_14,
                     {
-                      position: "relative",
+                      position: 'relative',
                       // flexGrow: 1,
                       left: 0,
                       top: 0,
                       // height: "auto",
-                      transform: [{ translateX: 0 }, { translateY: 0 }],
-                    },
+                      transform: [{ translateX: 0 }, { translateY: 0 }]
+                    }
                   ]}
                 >
                   14
@@ -445,31 +445,31 @@ export default function FloorModel() {
         <View style={stylesheet.style_Rectangle_79}></View>
       </View>
     </ScrollView>
-  );
+  )
 }
 
 const stylesheet = StyleSheet.create({
   style_FloorModel: {
-    position: "relative",
-    width: Dimensions.get("window").width,
+    position: 'relative',
+    width: Dimensions.get('window').width,
     height: 203,
     borderRadius: 0,
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(0,0,0,0)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(0,0,0,0)',
     left: 0,
-    top: 0,
+    top: 0
   },
   style_Group_458: {
-    position: "absolute",
-    width: "100%",
+    position: 'absolute',
+    width: '100%',
     height: 203,
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    overflow: "hidden",
-    backgroundColor: "rgba(0,0,0,0)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Rectangle_68: {
-    position: "absolute",
-    width: "100%",
+    position: 'absolute',
+    width: '100%',
     height: 203,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
@@ -480,570 +480,570 @@ const stylesheet = StyleSheet.create({
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    shadowColor: "rgb(41, 32, 113)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    shadowColor: 'rgb(41, 32, 113)',
     shadowOffset: {
       width: 0,
-      height: 0,
+      height: 0
     },
     shadowOpacity: 0.15000000596046448,
     shadowRadius: 18,
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    backgroundColor: 'rgba(255, 255, 255, 1)'
   },
   style_______________: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     left: 267,
     // right: "auto",
     top: 36,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    fontFamily: "Tajawal",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 16,
-    color: "rgba(14, 14, 14, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
-    letterSpacing: -0.30000001192092896,
+    color: 'rgba(14, 14, 14, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
+    letterSpacing: -0.30000001192092896
   },
   style_Group_503: {
-    position: "absolute",
+    position: 'absolute',
     width: 313,
     height: 35,
-    transform: [{ translateX: 42 }, { translateY: 69 }, { rotate: "0deg" }],
-    overflow: "hidden",
-    backgroundColor: "rgba(0,0,0,0)",
+    transform: [{ translateX: 42 }, { translateY: 69 }, { rotate: '0deg' }],
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Frame_460: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(255, 255, 255, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(255, 255, 255, 1)',
     left: 284,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(29, 161, 242, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(29, 161, 242, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_1: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(255, 255, 255, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(255, 255, 255, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_461: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 244,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_2: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_462: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 204,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_3: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_463: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 163,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_4: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_464: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 122,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_5: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_465: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 81,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_6: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_466: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 41,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_7: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_467: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_8: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Group_504: {
-    position: "absolute",
+    position: 'absolute',
     width: 253,
     height: 35,
-    transform: [{ translateX: 102 }, { translateY: 119 }, { rotate: "0deg" }],
-    overflow: "hidden",
-    backgroundColor: "rgba(0,0,0,0)",
+    transform: [{ translateX: 102 }, { translateY: 119 }, { rotate: '0deg' }],
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Frame_466_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 222,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_9: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_461_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 177,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_10: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_462_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 134,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_11: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_463_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 90,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_12: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_464_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 45,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_13: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Frame_465_2: {
-    position: "absolute",
+    position: 'absolute',
     // width: "auto",
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "rgba(41, 32, 113, 1)",
+    borderStyle: 'solid',
+    borderColor: 'rgba(41, 32, 113, 1)',
     left: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(255, 255, 255, 1)",
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     paddingTop: 8,
     paddingLeft: 12,
     paddingRight: 12,
     paddingBottom: 8,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row'
   },
   style_14: {
-    position: "relative",
+    position: 'relative',
     // width: "auto",
     // height: "auto",
     minWidth: 0,
     transform: [{ translateX: 0 }, { translateY: 0 }],
-    fontFamily: "Tajawal",
+    fontFamily: 'Tajawal',
     // fontWeight: 500,
-    textDecorationLine: "none",
+    textDecorationLine: 'none',
     fontSize: 12,
-    color: "rgba(41, 32, 113, 1)",
-    textAlign: "right",
-    textAlignVertical: "top",
+    color: 'rgba(41, 32, 113, 1)',
+    textAlign: 'right',
+    textAlignVertical: 'top',
     letterSpacing: -0.30000001192092896,
-    flexShrink: 0,
+    flexShrink: 0
   },
   style_Rectangle_79: {
-    position: "absolute",
+    position: 'absolute',
     width: 64,
     height: 6,
     borderRadius: 8,
@@ -1052,7 +1052,7 @@ const stylesheet = StyleSheet.create({
     // right: "auto",
     top: 7,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: "0deg" }],
-    backgroundColor: "rgba(200, 200, 200, 0.5)",
-  },
-});
+    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    backgroundColor: 'rgba(200, 200, 200, 0.5)'
+  }
+})
