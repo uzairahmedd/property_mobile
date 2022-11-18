@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet, FlatList } from 'react-native'
-import { Text } from 'react-native-paper'
+import { StyleSheet, FlatList, ScrollView } from 'react-native'
 import Badge from '../components/badge'
 import CityList from '../components/cityList'
 import CityListItem from '../components/cityListItem'
@@ -13,10 +12,12 @@ import { RootTabScreenProps } from '../types'
 export default function HomeScreen({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.container}>
-      <CityList />
-      {/* <CityListItem city='الرياض' count={250}/> */}
-      <PropertyList title={'أضيفت مؤخرا'} label={'للبيع'} />
-      <PropertyList title={'أضيفت مؤخرا'} label={'للايجار'} />
+      <ScrollView>
+        <CityList />
+        {/* <CityListItem city='الرياض' count={250}/> */}
+        <PropertyList title={'أضيفت مؤخرا'} label={'للبيع'} />
+        <PropertyList title={'أضيفت مؤخرا'} label={'للايجار'} />
+      </ScrollView>
     </View>
   )
 }

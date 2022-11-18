@@ -15,7 +15,11 @@ const BottomActions = () => {
           height: 48,
           backgroundColor: '#FFFFFF'
         }}
-        labelStyle={{ color: '#292071', fontSize: 16 }}
+        labelStyle={{
+          color: '#292071',
+          fontFamily: 'Tajawal_500Medium',
+          fontSize: 16
+        }}
       >
         حجز
       </Button>
@@ -25,7 +29,7 @@ const BottomActions = () => {
         icon="phone"
         onPress={() => navigation.navigate('Appointment')}
         style={{ borderRadius: 8, width: '65%' }}
-        labelStyle={{ fontSize: 16 }}
+        labelStyle={{ fontSize: 16, fontFamily: 'Tajawal_500Medium' }}
         contentStyle={{
           height: 48,
           backgroundColor: '#1DA1F2'

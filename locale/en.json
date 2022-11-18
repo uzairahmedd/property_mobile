@@ -1,0 +1,20 @@
+{
+  "propertyNature": "Property Nature",
+  "propertyType": "Property Type",
+  "hasElectricity": "Has Electricity",
+  "hasWater": "has Water",
+  "noOfStreets": "no Of Streets",
+  "streetInformation": "street Information",
+  "noOfBedrooms": "no Of Bedrooms",
+  "noOfBathrooms": "no Of Bathrooms",
+  "noOfHalls": "no Of Halls",
+  "noOfGuestRooms": "no Of Guest Rooms",
+  "noOfParking": "no Of Parking",
+  "isFurnished": "is Furnished",
+  "totalFloors": "total Floors",
+  "residential": "residential",
+  "apartment": "apartment",
+  "studio": "studio",
+  "yes": "yes",
+  "no": "no"
+}

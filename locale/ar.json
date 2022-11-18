@@ -1,0 +1,21 @@
+{
+  "propertyNature": "طبيعة العقار",
+  "propertyType": "نوع العقار",
+  "hasElectricity": "هل يوجد عداد كهرباء",
+  "hasWater": "هل يوجد عداد كهرباء",
+  "noOfStreets": "عدد الشوارع",
+  "streetInformation": "معلومات الشارع",
+  "noOfBedrooms": "غرف النوم",
+  "noOfBathrooms": "دورات المياه",
+  "noOfHalls": "صاللات",
+  "noOfGuestRooms": "مجالس",
+  "noOfParking": "عدد المواقف",
+  "isFurnished": "التأثيث",
+  "totalFloors": "إجمالي الأدوار/ الدور",
+
+  "residential": "سكني",
+  "apartment": "شقة",
+  "studio": "استديو",
+  "yes": "نعم",
+  "no": "لا"
+}

@@ -1,5 +1,5 @@
-import { Text, TextInput } from 'react-native-paper'
-import { View } from '../../components/Themed'
+import { TextInput } from 'react-native-paper'
+import { Text, View } from '../../components/Themed'
 
 interface Props {
   text: string

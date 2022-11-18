@@ -1,7 +1,7 @@
 import { View } from 'react-native'
-import { Text } from 'react-native-paper'
 import { omit, pick } from 'lodash'
 import I18n from '../locale'
+import { Text } from './Themed'
 
 interface Props {
   data: any

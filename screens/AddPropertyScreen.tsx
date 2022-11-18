@@ -63,7 +63,7 @@ export default function AddPropertyScreen() {
 
   const features = {
     propertyNature: 'residential',
-    propertyType: 'appartment',
+    propertyType: 'apartment',
     hasElectricity: 'no',
     hasWater: 'no',
     noOfStreets: '3',

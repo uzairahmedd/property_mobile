@@ -1,5 +1,4 @@
 import { StyleSheet, FlatList, View } from 'react-native'
-import { Text } from 'react-native-paper'
 import Badge from '../badge'
 import ListItem from '../cityListItem'
 

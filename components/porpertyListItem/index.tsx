@@ -5,9 +5,11 @@ import {
   Touchable,
   TouchableOpacity
 } from 'react-native'
-import { Text } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import Badge from '../badge'
+import { Feather } from '@expo/vector-icons'
+import React from 'react'
+import { Text } from '../Themed'
 
 interface Props {
   style?: {}
@@ -42,6 +44,12 @@ const ListItem = ({ style }: Props) => {
           <Text style={{ fontSize: 18 }}>
             فيلا إطلالة مميزة في حي سكني هادئ
           </Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Feather name="map-pin" />
+            <Text style={{ fontSize: 14, marginLeft: 10 }}>
+              {'فيلا إطلالة مميزة في حي سكني هادئ'}
+            </Text>
+          </View>
         </View>
       </TouchableOpacity>
     </>

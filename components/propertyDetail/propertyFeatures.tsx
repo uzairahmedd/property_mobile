@@ -1,5 +1,5 @@
 import { ScrollView } from 'react-native'
-import { Text } from 'react-native-paper'
+import { Text } from '../Themed'
 
 interface Props {
   data: string[]

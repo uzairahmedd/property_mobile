@@ -18,9 +18,10 @@ import {
   Image,
   I18nManager,
   Touchable,
-  StyleProp
+  StyleProp,
+  View
 } from 'react-native'
-
+import Add from '../assets/svg/Add.svg'
 import Colors from '../constants/Colors'
 import useColorScheme from '../hooks/useColorScheme'
 import ModalScreen from '../screens/ModalScreen'
@@ -34,6 +35,9 @@ import {
   RootTabScreenProps
 } from '../types'
 import LinkingConfiguration from './LinkingConfiguration'
+import i18n from '../locale/index'
+import { Text } from '../components/Themed'
+import OTPScreen from '../screens/OTPScreen'
 
 export default function Navigation({
   colorScheme
@@ -56,7 +60,7 @@ export default function Navigation({
  */
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
-const Logo = ({ style = {} }: { style: any }) => {
+const Logo = ({ style = {} }: { style?: any }) => {
   return (
     <Image
       style={[{ width: 110, height: 40, margin: 10 }, style]}
@@ -71,7 +75,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={OTPScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -125,7 +129,16 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerLeft: () => <Logo />
+          headerLeft: () => <Logo />,
+          headerRight: () => {
+            return (
+              <View>
+                {/* <Add width={40} height={40} fill={'#000999'} /> */}
+                <Text>{i18n.t('أضف إعلان')}</Text>
+              </View>
+            )
+          },
+          headerTitle: ''
         })}
       />
       <BottomTab.Screen
