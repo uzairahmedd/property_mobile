@@ -21,27 +21,27 @@ export default function AddPropertyScreen() {
     {
       title: 'Item 1',
       text: 'Text 1',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 2',
       text: 'Text 2',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 3',
       text: 'Text 3',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 4',
       text: 'Text 4',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 5',
       text: 'Text 5',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     }
   ]
 
@@ -93,7 +93,7 @@ export default function AddPropertyScreen() {
           <Text
             style={{
               fontSize: 18,
-              textAlign: 'left',
+              textAlign: 'right',
               color: '#292071'
             }}
           >
@@ -101,7 +101,7 @@ export default function AddPropertyScreen() {
           </Text>
           <View
             style={{
-              flexDirection: 'row',
+              flexDirection: 'row-reverse',
               justifyContent: 'flex-start',
               alignItems: 'center',
               marginVertical: 10
@@ -125,7 +125,7 @@ export default function AddPropertyScreen() {
         <Text
           style={{
             fontSize: 24,
-            textAlign: 'left',
+            textAlign: 'right',
             color: '#292071'
           }}
         >
@@ -137,14 +137,14 @@ export default function AddPropertyScreen() {
         {/* Description */}
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: 'row-reverse',
             justifyContent: 'space-between'
           }}
         >
           <Text
             style={{
               fontSize: 18,
-              textAlign: 'left',
+              textAlign: 'right',
               color: '#0F0F0F'
             }}
           >
@@ -153,7 +153,7 @@ export default function AddPropertyScreen() {
           <Text
             style={{
               fontSize: 18,
-              textAlign: 'left',
+              textAlign: 'right',
               color: '#292071'
             }}
           >
@@ -165,7 +165,7 @@ export default function AddPropertyScreen() {
             marginVertical: 20,
             fontSize: 18,
             fontWeight: '400',
-            textAlign: 'left',
+            textAlign: 'right',
             color: '#848484'
           }}
         >

@@ -12,7 +12,7 @@ const List = ({ title, label }: Props) => {
     <View style={{ marginVertical: 10 }}>
       <View
         style={{
-          flexDirection: 'row',
+          flexDirection: 'row-reverse',
           justifyContent: 'flex-start',
           alignItems: 'center',
           paddingVertical: 5
@@ -27,6 +27,9 @@ const List = ({ title, label }: Props) => {
       </View>
       <FlatList
         horizontal
+        snapToEnd
+        inverted={true}
+        nestedScrollEnabled={true}
         showsHorizontalScrollIndicator={false}
         data={[{ id: '1' }, { id: '2' }]}
         renderItem={() => <ListItem />}

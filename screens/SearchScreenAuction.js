@@ -2,24 +2,46 @@ import React, { useRef } from 'react'
 import {
   View,
   Text,
+  TextInput,
   Image,
   ScrollView,
   StyleSheet,
   Dimensions
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
+import ImageCarousel from '../components/generic/imageCarousel'
+
+import NavBar from "../components/models/NavBar";
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function SearchScreenAuction() {
+export default function SearchScreenAuction({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
   })
   const scrollRef = useRef()
   const scrollToEnd = () => scrollRef.current.scrollToEnd({ animated: false })
+  const carouselItems = [
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    }
+  ]
 
   return (
+    <View style={{ flex: 1 }}>
     <ScrollView
       bounces={false}
       showsVerticalScrollIndicator={false}
@@ -117,13 +139,8 @@ export default function SearchScreenAuction() {
               فيلا إطلالة مميزة في حي سكني هادئ
             </Text>
           </View>
-          <View style={stylesheet.style_Rectangle_64}></View>
-          <View style={stylesheet.style_Group_463}>
-            <View style={stylesheet.style_Ellipse_3}></View>
-            <View style={stylesheet.style_Ellipse_4}></View>
-            <View style={stylesheet.style_Ellipse_5}></View>
-            <View style={stylesheet.style_Ellipse_6}></View>
-            <View style={stylesheet.style_Ellipse_7}></View>
+          <View style={stylesheet.style_Rectangle_64}>
+            <ImageCarousel items={carouselItems} pure={true} />
           </View>
           <View style={stylesheet.style_Group_483}>
             <View
@@ -962,13 +979,8 @@ export default function SearchScreenAuction() {
               فيلا إطلالة مميزة في حي سكني هادئ
             </Text>
           </View>
-          <View style={stylesheet.style_Rectangle_64_2}></View>
-          <View style={stylesheet.style_Group_463_2}>
-            <View style={stylesheet.style_Ellipse_3_2}></View>
-            <View style={stylesheet.style_Ellipse_4_2}></View>
-            <View style={stylesheet.style_Ellipse_5_2}></View>
-            <View style={stylesheet.style_Ellipse_6_2}></View>
-            <View style={stylesheet.style_Ellipse_7_2}></View>
+          <View style={stylesheet.style_Rectangle_64_2}>
+          <ImageCarousel items={carouselItems} pure={true} />
           </View>
           <View style={stylesheet.style_Group_483_2}>
             <View
@@ -1733,13 +1745,8 @@ export default function SearchScreenAuction() {
               شقة سكنية مميزة دور ثالث اطلالة جميلة
             </Text>
           </View>
-          <View style={stylesheet.style_Rectangle_64_3}></View>
-          <View style={stylesheet.style_Group_463_3}>
-            <View style={stylesheet.style_Ellipse_3_3}></View>
-            <View style={stylesheet.style_Ellipse_4_3}></View>
-            <View style={stylesheet.style_Ellipse_5_3}></View>
-            <View style={stylesheet.style_Ellipse_6_3}></View>
-            <View style={stylesheet.style_Ellipse_7_3}></View>
+          <View style={stylesheet.style_Rectangle_64_3}>
+          <ImageCarousel items={carouselItems} pure={true} />
           </View>
           <View style={stylesheet.style_Group_483_3}>
             <View
@@ -2571,7 +2578,8 @@ export default function SearchScreenAuction() {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder="تبحث عن عقار؟"
                 style={[
                   stylesheet.style_______________2,
                   {
@@ -2583,9 +2591,7 @@ export default function SearchScreenAuction() {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                تبحث عن عقار؟
-              </Text>
+              />
             </View>
           </View>
           <ScrollView
@@ -2725,6 +2731,10 @@ export default function SearchScreenAuction() {
         </View>
       </View>
     </ScrollView>
+          <View style={{ position: "absolute", bottom: 10 }}>
+          <NavBar navigation={navigation} />
+        </View>
+      </View>
   )
 }
 const Component_style_Group_440 = ({
@@ -4146,7 +4156,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -4157,7 +4167,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 331,
+    right: 10,
     // right: "auto",
     top: 24,
     // bottom: "auto",
@@ -5205,7 +5215,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -5216,7 +5226,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 331,
+    right: 10,
     // right: "auto",
     top: 24,
     // bottom: "auto",
@@ -6264,7 +6274,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -6275,7 +6285,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 331,
+    right: 10,
     // right: "auto",
     top: 24,
     // bottom: "auto",

@@ -24,7 +24,7 @@ export default function AddProperty7() {
       style={{ height: Dimensions.get('window').height }}
     >
       <View style={stylesheet.style_AddProperty7}>
-        <Svg style={stylesheet.style_Ellipse_9} fill={'rgba(201, 0, 157, 1)'}>
+        <Svg style={stylesheet.style_Ellipse_9} fill={'rgba(201, 0, 157, 0.05)'}>
           <Path
             fillRule={'nonzero'}
             d={
@@ -780,7 +780,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_523: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 132,
     transform: [{ translateX: 16 }, { translateY: 473 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -788,7 +788,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_89: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 132,
     borderRadius: 8,
     opacity: 1,

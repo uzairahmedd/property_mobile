@@ -5,13 +5,16 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TouchableOpacity,
+  TextInput
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
+import { AntDesign } from '@expo/vector-icons'
 
-export default function AddProperty6() {
+export default function AddProperty6({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
@@ -45,6 +48,21 @@ export default function AddProperty6() {
           >
             اضافة إعلان عقار
           </Text>
+
+          <TouchableOpacity onPress={() => {
+        navigation.goBack()
+        }}>
+        <AntDesign
+            style={{
+              position: 'absolute',
+              right: 20,
+              top:-12
+            }}
+            name="rightcircleo"
+            size={24}
+            color="black"
+          />
+        </TouchableOpacity>
         </View>
         <View
           style={[
@@ -69,7 +87,11 @@ export default function AddProperty6() {
           </Text>
         </View>
         <View style={stylesheet.style_Group_468}>
-          <View style={stylesheet.style_Rectangle_74}></View>
+          <TouchableOpacity
+          onPress={() => {
+          navigation.navigate("AddProperty7")
+          }}
+          style={stylesheet.style_Rectangle_74}>
           <View
             style={[
               stylesheet.style_____________,
@@ -92,9 +114,14 @@ export default function AddProperty6() {
               توثيق العقار
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
         <View style={stylesheet.style_Group_506}>
-          <View style={stylesheet.style_Rectangle_74_2}></View>
+          <TouchableOpacity
+          onPress={() => {
+          navigation.navigate("AddProperty8")
+          }}
+          style={stylesheet.style_Rectangle_74_2}>
           <View
             style={[
               stylesheet.style_____,
@@ -117,6 +144,7 @@ export default function AddProperty6() {
               تخطي
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
         <View style={stylesheet.style_Rectangle_82}></View>
         <View style={stylesheet.style_Rectangle_83}></View>
@@ -125,40 +153,8 @@ export default function AddProperty6() {
         <View style={stylesheet.style_Rectangle_86}></View>
         <View style={stylesheet.style_Rectangle_87}></View>
         <View style={stylesheet.style_Rectangle_88}></View>
-        <View style={stylesheet.style_Back2_1}>
-          <View style={stylesheet.style_Group}>
-            <View style={stylesheet.style_Group_2}>
-              <View style={stylesheet.style_Group_3}>
-                <View style={stylesheet.style_Group_4}>
-                  <Svg
-                    style={stylesheet.style_Vector}
-                    fill={'rgba(41, 32, 113, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 12 0 C 5.372578382492065 0 0 5.372578382492065 0 12 C 0 18.627421617507935 5.372578382492065 24 12 24 C 18.627421617507935 24 24 18.627421617507935 24 12 C 24 5.372578382492065 18.627421617507935 0 12 0 Z M 12 22.5 C 6.201000094413757 22.5 1.5 17.798999905586243 1.5 12 C 1.5 6.201000094413757 6.201000094413757 1.5 12 1.5 C 17.798999905586243 1.5 22.5 6.201000094413757 22.5 12 C 22.5 17.798999905586243 17.798999905586243 22.5 12 22.5 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                  <Svg
-                    style={stylesheet.style_Vector_2}
-                    fill={'rgba(41, 32, 113, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 6.218110084533691 0 L 0.2181093692779541 6 C -0.07270313054323196 6.292546883225441 -0.07270313054323196 6.764952287077904 0.2181093692779541 7.057499170303345 L 6.218110084533691 13.057499885559082 L 7.275609970092773 11.99250054359436 L 1.8081092834472656 6.5249998569488525 L 7.275609970092773 1.057499885559082 L 6.218110084533691 0 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
+
+
         <View
           style={[
             stylesheet.style___________________,
@@ -279,7 +275,8 @@ export default function AddProperty6() {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder='ادخل هنا'
                 style={[
                   stylesheet.style_________,
                   {
@@ -291,9 +288,7 @@ export default function AddProperty6() {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                ادخل هنا
-              </Text>
+              />
             </View>
           </View>
         </View>
@@ -327,7 +322,8 @@ export default function AddProperty6() {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder='الرجاء ادخال الكود ( تم ارساله لك عبر الرسالة نصية )'
                 style={[
                   stylesheet.style_____________________________________________________,
                   {
@@ -339,9 +335,7 @@ export default function AddProperty6() {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                الرجاء ادخال الكود ( تم ارساله لك عبر الرسالة نصية )
-              </Text>
+              />
             </View>
           </View>
         </View>
@@ -450,9 +444,9 @@ const stylesheet = StyleSheet.create({
   },
   style_________________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 126,
+    left: 0,
     // right: "auto",
     top: 56,
     // bottom: "auto",
@@ -600,7 +594,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_84: {
     position: 'absolute',
@@ -613,7 +607,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_85: {
     position: 'absolute',
@@ -626,7 +620,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_86: {
     position: 'absolute',
@@ -639,7 +633,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_87: {
     position: 'absolute',
@@ -652,7 +646,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_88: {
     position: 'absolute',
@@ -665,7 +659,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Back2_1: {
     position: 'absolute',
@@ -842,7 +836,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_511: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 65,
     transform: [{ translateX: 16 }, { translateY: 251 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -868,7 +862,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -883,9 +877,9 @@ const stylesheet = StyleSheet.create({
   },
   style_________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 287,
+    right: 30,
     // right: "auto",
     top: 12,
     // bottom: "auto",
@@ -901,7 +895,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_512: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 65,
     transform: [{ translateX: 16 }, { translateY: 340 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -927,7 +921,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -942,9 +936,9 @@ const stylesheet = StyleSheet.create({
   },
   style_____________________________________________________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 90,
+    right: 30,
     // right: "auto",
     top: 12,
     // bottom: "auto",

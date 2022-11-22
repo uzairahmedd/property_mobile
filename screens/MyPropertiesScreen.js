@@ -5,17 +5,37 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
+import ImageCarousel from '../components/generic/imageCarousel'
+import { AntDesign } from '@expo/vector-icons'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function MyPropertiesScreen() {
+export default function MyPropertiesScreen({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
   })
+  const carouselItems = [
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    },
+    {
+      image: require('../assets/images/sample-property-1.png')
+    }
+  ]
 
   return (
     <ScrollView
@@ -73,13 +93,9 @@ export default function MyPropertiesScreen() {
               فيلا إطلالة مميزة في حي سكني هادئ
             </Text>
           </View>
-          <View style={stylesheet.style_Rectangle_64}></View>
-          <View style={stylesheet.style_Group_463}>
-            <View style={stylesheet.style_Ellipse_3}></View>
-            <View style={stylesheet.style_Ellipse_4}></View>
-            <View style={stylesheet.style_Ellipse_5}></View>
-            <View style={stylesheet.style_Ellipse_6}></View>
-            <View style={stylesheet.style_Ellipse_7}></View>
+          <View style={stylesheet.style_Rectangle_64}>
+          <ImageCarousel items={carouselItems} pure={true} />
+            
           </View>
           <View style={stylesheet.style_Group_456}>
             <View style={stylesheet.style_Rectangle_65}></View>
@@ -881,13 +897,9 @@ export default function MyPropertiesScreen() {
               فيلا إطلالة مميزة في حي سكني هادئ
             </Text>
           </View>
-          <View style={stylesheet.style_Rectangle_64_2}></View>
-          <View style={stylesheet.style_Group_463_2}>
-            <View style={stylesheet.style_Ellipse_3_2}></View>
-            <View style={stylesheet.style_Ellipse_4_2}></View>
-            <View style={stylesheet.style_Ellipse_5_2}></View>
-            <View style={stylesheet.style_Ellipse_6_2}></View>
-            <View style={stylesheet.style_Ellipse_7_2}></View>
+          <View style={stylesheet.style_Rectangle_64_2}>
+          <ImageCarousel items={carouselItems} pure={true} />
+            
           </View>
           <View style={stylesheet.style_Group_456_2}>
             <View style={stylesheet.style_Rectangle_65_4}></View>
@@ -1664,10 +1676,13 @@ export default function MyPropertiesScreen() {
             </Text>
           </View>
         </View>
-        <View
+        <TouchableOpacity
+        onPress={() => {
+        navigation.goBack()
+        }}
           style={[
-            stylesheet.style_title,
-            { display: 'flex', flexDirection: 'row', alignItems: 'center' }
+            // stylesheet.style_title,
+            { display: 'flex',marginTop:30,padding:20, flexDirection: 'row', alignItems: 'center' }
           ]}
         >
           <Text
@@ -1676,50 +1691,24 @@ export default function MyPropertiesScreen() {
               {
                 position: 'relative',
                 // flexGrow: 1,
-                left: 0,
-                top: 0,
                 // height: "auto",
-                transform: [{ translateX: 0 }, { translateY: 0 }]
+                // transform: [{ translateX: 0 }, { translateY: 0 }]
               }
             ]}
           >
             عقاراتي
           </Text>
-        </View>
-        <View style={stylesheet.style_Back2_1}>
-          <View style={stylesheet.style_Group_25}>
-            <View style={stylesheet.style_Group_26}>
-              <View style={stylesheet.style_Group_27}>
-                <View style={stylesheet.style_Group_28}>
-                  <Svg
-                    style={stylesheet.style_Vector_85}
-                    fill={'rgba(14, 14, 14, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 12 0 C 5.372578382492065 0 0 5.372578382492065 0 12 C 0 18.627421617507935 5.372578382492065 24 12 24 C 18.627421617507935 24 24 18.627421617507935 24 12 C 24 5.372578382492065 18.627421617507935 0 12 0 Z M 12 22.5 C 6.201000094413757 22.5 1.5 17.798999905586243 1.5 12 C 1.5 6.201000094413757 6.201000094413757 1.5 12 1.5 C 17.798999905586243 1.5 22.5 6.201000094413757 22.5 12 C 22.5 17.798999905586243 17.798999905586243 22.5 12 22.5 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                  <Svg
-                    style={stylesheet.style_Vector_86}
-                    fill={'rgba(14, 14, 14, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 6.218110084533691 0 L 0.2181093692779541 6 C -0.07270313054323196 6.292546883225441 -0.07270313054323196 6.764952287077904 0.2181093692779541 7.057499170303345 L 6.218110084533691 13.057499885559082 L 7.275609970092773 11.99250054359436 L 1.8081092834472656 6.5249998569488525 L 7.275609970092773 1.057499885559082 L 6.218110084533691 0 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
+
+        <AntDesign
+            style={{
+              position: 'absolute',
+              right: 30
+            }}
+            name="rightcircleo"
+            size={24}
+            color="black"
+          />
+        </TouchableOpacity>
       </View>
     </ScrollView>
   )
@@ -3007,7 +2996,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -3018,7 +3007,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 331,
+    right: 10,
     // right: "auto",
     top: 24,
     // bottom: "auto",
@@ -3036,12 +3025,14 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: 85,
     height: 33,
-    transform: [{ translateX: 290 }, { translateY: 57 }, { rotate: '0deg' }],
+    top: 57,
+    right:0,
+    // transform: [{ translateX: 290 }, { translateY: 57 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Rectangle_67_2: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 85,
     height: 33,
     borderTopLeftRadius: 30,
@@ -3049,11 +3040,11 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 0,
+    // left: 0,
     // right: "auto",
-    top: 0,
+    // top: 0,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(31, 175, 56, 1)'
   },
   style_______2: {
@@ -4196,7 +4187,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -4212,7 +4203,7 @@ const stylesheet = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 30,
     opacity: 1,
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 57,
     // bottom: "auto",
@@ -4223,7 +4214,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 331,
+    right: 10,
     // right: "auto",
     top: 24,
     // bottom: "auto",
@@ -4241,7 +4232,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 289,
+    right: 10,
     // right: "auto",
     top: 65,
     // bottom: "auto",
@@ -4256,21 +4247,21 @@ const stylesheet = StyleSheet.create({
     letterSpacing: -0.30000001192092896
   },
   style_title: {
-    position: 'absolute',
-    // width: "auto",
+    // position: 'absolute',
+    width: "100%",
     // height: "auto",
-    left: 160,
+    // left: 160,
     // right: "auto",
-    top: 57,
+    // marginTop: 20,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     fontFamily: 'Tajawal',
     // fontWeight: 500,
     textDecorationLine: 'none',
     fontSize: 18,
     color: 'rgba(14, 14, 14, 1)',
     textAlign: 'center',
-    textAlignVertical: 'top',
+    textAlignVertical: 'center',
     letterSpacing: -0.30000001192092896
   },
   style_Back2_1: {

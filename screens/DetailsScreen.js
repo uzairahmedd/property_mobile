@@ -2983,7 +2983,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 290,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -3811,7 +3811,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Line_16: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 0,
     // borderRadius: undefined,
     borderWidth: 1,
@@ -3829,7 +3829,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Line_17: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 0,
     // borderRadius: undefined,
     borderWidth: 1,
@@ -3847,7 +3847,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Line_18: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 0,
     // borderRadius: undefined,
     borderWidth: 1,
@@ -3865,7 +3865,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Line_19: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 0,
     // borderRadius: undefined,
     borderWidth: 1,

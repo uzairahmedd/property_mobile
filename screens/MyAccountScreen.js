@@ -5,13 +5,15 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TextInput,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function MyAccountScreen() {
+export default function MyAccountScreen({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
@@ -27,9 +29,25 @@ export default function MyAccountScreen() {
         <View
           style={[
             stylesheet.style______________,
-            { display: 'flex', flexDirection: 'row', alignItems: 'center' }
+            { display: 'flex',width:"100%",marginTop: 57,paddingLeft:20,paddingBottom:20,paddingRight:20, flexDirection: 'row', alignItems: 'center',justifyContent:"space-between" }
           ]}
         >
+
+<Text
+            style={[
+              stylesheet.style____,
+              {
+                position: 'relative',
+                // flexGrow: 1,
+                left: 0,
+                top: 0,
+                // height: "auto",
+                transform: [{ translateX: 0 }, { translateY: 0 }]
+              }
+            ]}
+          >
+            حفظ
+          </Text>
           <Text
             style={[
               stylesheet.style______________,
@@ -45,14 +63,11 @@ export default function MyAccountScreen() {
           >
             إعدادت الحساب
           </Text>
-        </View>
-        <View
-          style={[
-            stylesheet.style_______,
-            { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-          ]}
-        >
-          <Text
+
+<TouchableOpacity onPress={() => {
+navigation.goBack()
+}}>
+<Text
             style={[
               stylesheet.style_______,
               {
@@ -67,28 +82,7 @@ export default function MyAccountScreen() {
           >
             الرجوع
           </Text>
-        </View>
-        <View
-          style={[
-            stylesheet.style____,
-            { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-          ]}
-        >
-          <Text
-            style={[
-              stylesheet.style____,
-              {
-                position: 'relative',
-                // flexGrow: 1,
-                left: 0,
-                top: 0,
-                // height: "auto",
-                transform: [{ translateX: 0 }, { translateY: 0 }]
-              }
-            ]}
-          >
-            حفظ
-          </Text>
+</TouchableOpacity>
         </View>
         <View style={stylesheet.style_Group_465}>
           <View
@@ -114,41 +108,30 @@ export default function MyAccountScreen() {
             </Text>
           </View>
           <View style={stylesheet.style_Group_464}>
-            <View style={stylesheet.style_Rectangle_74}></View>
-            <View
-              style={[
-                stylesheet.style______________________________________,
-                { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-              ]}
-            >
-              <Text
+            <View style={stylesheet.style_Rectangle_74}>
+            <TextInput
+              placeholder='خالد بن عبدالله بن عبدالعزيز ال عثمان'
                 style={[
                   stylesheet.style______________________________________,
                   {
                     position: 'relative',
-                    // flexGrow: 1,
-                    left: 0,
-                    top: 0,
-                    // height: "auto",
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                خالد بن عبدالله بن عبدالعزيز ال عثمان
-              </Text>
+              />
             </View>
           </View>
         </View>
-        <View style={stylesheet.style_Group_466}>
+        <View style={stylesheet.style_Group_465}>
           <View
             style={[
-              stylesheet.style____________________________,
+              stylesheet.style___________,
               { display: 'flex', flexDirection: 'row', alignItems: 'center' }
             ]}
           >
             <Text
               style={[
-                stylesheet.style____________________________,
+                stylesheet.style___________,
                 {
                   position: 'relative',
                   // flexGrow: 1,
@@ -162,42 +145,31 @@ export default function MyAccountScreen() {
               البريد الإلكتروني (اختياري)
             </Text>
           </View>
-          <View style={stylesheet.style_Group_464_2}>
-            <View style={stylesheet.style_Rectangle_74_2}></View>
-            <View
-              style={[
-                stylesheet.style__________________,
-                { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-              ]}
-            >
-              <Text
+          <View style={stylesheet.style_Group_464}>
+          <View style={stylesheet.style_Rectangle_74}>
+            <TextInput
+              placeholder='البريد الإلكتروني'
                 style={[
-                  stylesheet.style__________________,
+                  stylesheet.style______________________________________,
                   {
                     position: 'relative',
-                    // flexGrow: 1,
-                    left: 0,
-                    top: 0,
-                    // height: "auto",
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                البريد الإلكتروني
-              </Text>
+              />
             </View>
           </View>
         </View>
-        <View style={stylesheet.style_Group_467}>
+        <View style={stylesheet.style_Group_465}>
           <View
             style={[
-              stylesheet.style____________2,
+              stylesheet.style___________,
               { display: 'flex', flexDirection: 'row', alignItems: 'center' }
             ]}
           >
             <Text
               style={[
-                stylesheet.style____________2,
+                stylesheet.style___________,
                 {
                   position: 'relative',
                   // flexGrow: 1,
@@ -211,29 +183,18 @@ export default function MyAccountScreen() {
               رقم الجوال
             </Text>
           </View>
-          <View style={stylesheet.style_Group_464_3}>
-            <View style={stylesheet.style_Rectangle_74_3}></View>
-            <View
-              style={[
-                stylesheet.style__966_5664616316,
-                { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-              ]}
-            >
-              <Text
+          <View style={stylesheet.style_Group_464}>
+          <View style={stylesheet.style_Rectangle_74}>
+            <TextInput
+              placeholder='+966 5664616316'
                 style={[
-                  stylesheet.style__966_5664616316,
+                  stylesheet.style______________________________________,
                   {
                     position: 'relative',
-                    // flexGrow: 1,
-                    left: 0,
-                    top: 0,
-                    // height: "auto",
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                +966 5664616316
-              </Text>
+              />
             </View>
             <View style={stylesheet.style_Frame_467}>
               <View
@@ -265,16 +226,16 @@ export default function MyAccountScreen() {
             </View>
           </View>
         </View>
-        <View style={stylesheet.style_Group_512}>
+        <View style={stylesheet.style_Group_465}>
           <View
             style={[
-              stylesheet.style____________________,
+              stylesheet.style___________,
               { display: 'flex', flexDirection: 'row', alignItems: 'center' }
             ]}
           >
             <Text
               style={[
-                stylesheet.style____________________,
+                stylesheet.style___________,
                 {
                   position: 'relative',
                   // flexGrow: 1,
@@ -288,12 +249,21 @@ export default function MyAccountScreen() {
               العنوان ( اختياري )
             </Text>
           </View>
-          <View style={stylesheet.style_Frame_459}>
-            <View style={stylesheet.style_Location_1}>
-              <View style={stylesheet.style_Group}>
-                <View style={stylesheet.style_Group_2}>
-                  <View style={stylesheet.style_Group_3}>
-                    <View style={stylesheet.style_Group_4}>
+          <View style={stylesheet.style_Group_464}>
+          <View style={stylesheet.style_Rectangle_74}>
+            <TextInput
+              placeholder='مثال: ( الرياض, شارع الملك فهد, بناية رقم 1051, الطابق 5 )'
+                style={[
+                  stylesheet.style______________________________________,
+                  {
+                    position: 'relative',
+                    transform: [{ translateX: 0 }, { translateY: 0 }]
+                  }
+                ]}
+              />
+            </View>
+            </View>
+            <View style={stylesheet.style_Group_4}>
                       <Svg
                         style={stylesheet.style_Vector}
                         fill={'rgba(29, 161, 242, 1)'}
@@ -319,33 +289,6 @@ export default function MyAccountScreen() {
                         />
                       </Svg>
                     </View>
-                  </View>
-                </View>
-              </View>
-            </View>
-            <View
-              style={[
-                stylesheet.style___________________________________________1051_________5__,
-                { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-              ]}
-            >
-              <Text
-                style={[
-                  stylesheet.style___________________________________________1051_________5__,
-                  {
-                    position: 'relative',
-                    // flexGrow: 1,
-                    left: 0,
-                    top: 0,
-                    // height: "auto",
-                    transform: [{ translateX: 0 }, { translateY: 0 }]
-                  }
-                ]}
-              >
-                مثال: ( الرياض, شارع الملك فهد, بناية رقم 1051, الطابق 5 )
-              </Text>
-            </View>
-          </View>
         </View>
       </View>
     </ScrollView>
@@ -451,12 +394,12 @@ const stylesheet = StyleSheet.create({
     top: 0
   },
   style______________: {
-    position: 'absolute',
+    // position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 129,
+    // left: 0,
     // right: "auto",
-    top: 57,
+    // marginTop: 57,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     fontFamily: 'Tajawal',
@@ -505,10 +448,11 @@ const stylesheet = StyleSheet.create({
     letterSpacing: -0.30000001192092896
   },
   style_Group_465: {
-    position: 'absolute',
-    width: 343,
+    // position: 'absolute',
+    width: "100%",
     height: 73,
-    transform: [{ translateX: 16 }, { translateY: 115 }, { rotate: '0deg' }],
+    marginTop:20,
+    // transform: [{ translateX: 16 }, { translateY: 115 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -516,7 +460,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 278,
+    right: 10,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -531,49 +475,54 @@ const stylesheet = StyleSheet.create({
     letterSpacing: -0.30000001192092896
   },
   style_Group_464: {
-    position: 'absolute',
-    width: 343,
+    // position: 'absolute',
+    width: Dimensions.get("window").width - 20,
+    marginRight:10,
+    marginLeft:10,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Rectangle_74: {
-    position: 'absolute',
-    width: 343,
-    height: 48,
+    // position: 'absolute',
+    width: Dimensions.get("window").width - 20,
+    // marginRight:10,
+    // marginLeft:10,
+    // height: 48,
+    padding:10,
     borderRadius: 8,
     opacity: 1,
     borderWidth: 1,
     borderColor: 'rgba(200, 200, 200, 1)',
-    left: 0,
+    // left: 0,
     // right: "auto",
-    top: 0,
+    // top: 0,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(255, 255, 255, 1)'
   },
   style______________________________________: {
-    position: 'absolute',
+    // position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 112,
+    // left: 112,
     // right: "auto",
-    top: 16,
+    // top: 16,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     fontFamily: 'Tajawal',
     // fontWeight: 500,
     textDecorationLine: 'none',
     fontSize: 14,
     color: 'rgba(41, 32, 113, 1)',
     textAlign: 'right',
-    textAlignVertical: 'top',
+    textAlignVertical: 'center',
     letterSpacing: 0
   },
   style_Group_466: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 73,
     transform: [{ translateX: 16 }, { translateY: 212 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -599,7 +548,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -607,7 +556,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -640,7 +589,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_467: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 73,
     transform: [{ translateX: 16 }, { translateY: 309 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -666,7 +615,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464_3: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -674,7 +623,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_3: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -744,7 +693,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_512: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 65,
     transform: [{ translateX: 16 }, { translateY: 406 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -770,7 +719,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -828,7 +777,8 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: 13.298566818237305,
     height: 19,
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    top:40,
+    left:20,
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },

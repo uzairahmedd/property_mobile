@@ -5,27 +5,32 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 import { AntDesign } from '@expo/vector-icons'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function TermsScreen() {
+import NavBar from '../components/models/NavBar';
+
+export default function TermsScreen({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
   })
 
   return (
-    <ScrollView
+    <View style={{flex:1}}>
+      <ScrollView
       bounces={false}
       showsVerticalScrollIndicator={false}
       style={{ height: Dimensions.get('window').height }}
     >
       <View style={stylesheet.style_TermsScreen}>
-        <View
+        <TouchableOpacity
+        onPress={()=>{navigation.goBack()}}
           style={[
             stylesheet.style_Title,
             {
@@ -61,7 +66,7 @@ export default function TermsScreen() {
             size={24}
             color="black"
           />
-        </View>
+        </TouchableOpacity>
         <View
           style={[
             stylesheet.style_Subtitle,
@@ -131,6 +136,10 @@ export default function TermsScreen() {
         </View>
       </View>
     </ScrollView>
+    <View style={{position:"absolute",bottom:10}}>
+    <NavBar navigation={navigation} />
+    </View>
+    </View>
   )
 }
 const stylesheet = StyleSheet.create({
@@ -183,7 +192,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Text: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 594,
     left: 16,
     // right: "auto",

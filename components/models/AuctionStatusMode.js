@@ -161,7 +161,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_458: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 163,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -169,7 +169,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_68: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 149,
     borderRadius: 8,
     opacity: 1,

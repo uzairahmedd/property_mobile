@@ -540,7 +540,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_468: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 482 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -548,7 +548,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,

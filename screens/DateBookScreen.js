@@ -733,7 +733,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 289,
+    right: 10,
     // right: "auto",
     top: 234,
     // bottom: "auto",
@@ -767,7 +767,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_465: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 73,
     transform: [{ translateX: 16 }, { translateY: 298 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -777,7 +777,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 278,
+    right: 10,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -793,7 +793,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -801,7 +801,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -834,7 +834,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_466: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 73,
     transform: [{ translateX: 16 }, { translateY: 391 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -860,7 +860,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -868,7 +868,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -901,7 +901,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_467: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 73,
     transform: [{ translateX: 16 }, { translateY: 484 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -927,7 +927,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464_3: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 25 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -935,7 +935,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_3: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -1021,7 +1021,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_468: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 679 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -1029,7 +1029,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_4: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,

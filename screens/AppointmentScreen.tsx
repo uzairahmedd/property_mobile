@@ -10,27 +10,27 @@ const AppointmentScreen = () => {
     {
       title: 'Item 1',
       text: 'Text 1',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 2',
       text: 'Text 2',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 3',
       text: 'Text 3',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 4',
       text: 'Text 4',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     },
     {
       title: 'Item 5',
       text: 'Text 5',
-      image: require('../assets/images/sample-property.png')
+      image: require('../assets/images/sample-property-2.png')
     }
   ]
 

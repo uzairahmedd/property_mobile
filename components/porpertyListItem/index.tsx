@@ -26,7 +26,7 @@ const ListItem = ({ style }: Props) => {
         <ImageBackground
           style={[styles.imageContainer, style]}
           imageStyle={{ borderRadius: 10 }}
-          source={require('../../assets/images/sample-property.png')}
+          source={require('../../assets/images/sample-property-2.png')}
         >
           <Badge text={'للبيع'} style={{ backgroundColor: '#2894CF' }} />
           <Badge

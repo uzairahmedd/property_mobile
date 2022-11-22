@@ -5,13 +5,17 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TextInput,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
+import { AntDesign } from '@expo/vector-icons'
+
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function AddProperty2() {
+export default function AddProperty2({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
@@ -45,6 +49,20 @@ export default function AddProperty2() {
           >
             اضافة إعلان عقار
           </Text>
+        <TouchableOpacity onPress={() => {
+        navigation.goBack()
+        }}>
+        <AntDesign
+            style={{
+              position: 'absolute',
+              right: 20,
+              top:-12
+            }}
+            name="rightcircleo"
+            size={24}
+            color="black"
+          />
+        </TouchableOpacity>
         </View>
         <View
           style={[
@@ -69,7 +87,11 @@ export default function AddProperty2() {
           </Text>
         </View>
         <View style={stylesheet.style_Group_468}>
-          <View style={stylesheet.style_Rectangle_74}></View>
+          <TouchableOpacity
+          onPress={() => {
+          navigation.navigate("AddProperty3")
+          }}
+          style={stylesheet.style_Rectangle_74}>
           <View
             style={[
               stylesheet.style_______,
@@ -92,9 +114,14 @@ export default function AddProperty2() {
               التالي
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
         <View style={stylesheet.style_Group_506}>
-          <View style={stylesheet.style_Rectangle_74_2}></View>
+          <TouchableOpacity
+          onPress={() => {
+          navigation.goBack()
+          }}
+          style={stylesheet.style_Rectangle_74_2}>
           <View
             style={[
               stylesheet.style________2,
@@ -117,6 +144,7 @@ export default function AddProperty2() {
               السابق
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
         <View style={stylesheet.style_Group_510}>
           <View
@@ -538,7 +566,8 @@ export default function AddProperty2() {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder=" قيمة الإيجار ( السنة )"
                 style={[
                   stylesheet.style_______________________,
                   {
@@ -550,9 +579,7 @@ export default function AddProperty2() {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                قيمة الإيجار ( السنة )
-              </Text>
+              />
             </View>
           </View>
         </View>
@@ -652,7 +679,8 @@ export default function AddProperty2() {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder="عرض الشارع"
                 style={[
                   stylesheet.style___________,
                   {
@@ -664,9 +692,7 @@ export default function AddProperty2() {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                عرض الشارع
-              </Text>
+              />
             </View>
             <View style={stylesheet.style_arrow_1}>
               <View style={stylesheet.style_Group}>
@@ -919,40 +945,7 @@ export default function AddProperty2() {
         <View style={stylesheet.style_Rectangle_86}></View>
         <View style={stylesheet.style_Rectangle_87}></View>
         <View style={stylesheet.style_Rectangle_88}></View>
-        <View style={stylesheet.style_Back2_1}>
-          <View style={stylesheet.style_Group_2}>
-            <View style={stylesheet.style_Group_3}>
-              <View style={stylesheet.style_Group_4}>
-                <View style={stylesheet.style_Group_5}>
-                  <Svg
-                    style={stylesheet.style_Vector_2}
-                    fill={'rgba(41, 32, 113, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 12 0 C 5.372578382492065 0 0 5.372578382492065 0 12 C 0 18.627421617507935 5.372578382492065 24 12 24 C 18.627421617507935 24 24 18.627421617507935 24 12 C 24 5.372578382492065 18.627421617507935 0 12 0 Z M 12 22.5 C 6.201000094413757 22.5 1.5 17.798999905586243 1.5 12 C 1.5 6.201000094413757 6.201000094413757 1.5 12 1.5 C 17.798999905586243 1.5 22.5 6.201000094413757 22.5 12 C 22.5 17.798999905586243 17.798999905586243 22.5 12 22.5 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                  <Svg
-                    style={stylesheet.style_Vector_3}
-                    fill={'rgba(41, 32, 113, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 6.218110084533691 0 L 0.2181093692779541 6 C -0.07270313054323196 6.292546883225441 -0.07270313054323196 6.764952287077904 0.2181093692779541 7.057499170303345 L 6.218110084533691 13.057499885559082 L 7.275609970092773 11.99250054359436 L 1.8081092834472656 6.5249998569488525 L 7.275609970092773 1.057499885559082 L 6.218110084533691 0 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
+
       </View>
     </ScrollView>
   )
@@ -1058,9 +1051,9 @@ const stylesheet = StyleSheet.create({
   },
   style_________________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 126,
+    // left: 126,
     // right: "auto",
     top: 56,
     // bottom: "auto",
@@ -1187,7 +1180,7 @@ const stylesheet = StyleSheet.create({
   style_Group_510: {
     position: 'absolute',
     width: 126,
-    height: 60,
+    height: 80,
     transform: [{ translateX: 233 }, { translateY: 123 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1196,7 +1189,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 54,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -1213,7 +1206,7 @@ const stylesheet = StyleSheet.create({
   style_Group_503: {
     position: 'absolute',
     width: 126,
-    height: 33,
+    height: 40,
     transform: [{ translateX: 0 }, { translateY: 27 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1294,8 +1287,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_513: {
     position: 'absolute',
-    width: 154,
-    height: 60,
+    width: 159,
+    height: 70,
     transform: [{ translateX: 205 }, { translateY: 533 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1304,7 +1297,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 87,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -1468,16 +1461,16 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_512: {
     position: 'absolute',
-    width: 343,
-    height: 86,
+    width: Dimensions.get("window").width - 20,
+    height: 99,
     transform: [{ translateX: 16 }, { translateY: 423 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Group_508: {
     position: 'absolute',
-    width: 343,
-    height: 33,
+    width: Dimensions.get("window").width - 20,
+    height: 39,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1502,8 +1495,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_504: {
     position: 'absolute',
-    width: 91,
-    height: 33,
+    width: 99,
+    height: 40,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1584,8 +1577,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_507: {
     position: 'absolute',
-    width: 343,
-    height: 33,
+    width: Dimensions.get("window").width - 20,
+    height: 40,
     transform: [{ translateX: 0 }, { translateY: 53 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1610,8 +1603,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_505: {
     position: 'absolute',
-    width: 91,
-    height: 33,
+    width: 99,
+    height: 40,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1692,8 +1685,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_511: {
     position: 'absolute',
-    width: 343,
-    height: 65,
+    width: Dimensions.get("window").width - 20,
+    height: 69,
     transform: [{ translateX: 16 }, { translateY: 334 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1718,7 +1711,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459_6: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -1751,9 +1744,9 @@ const stylesheet = StyleSheet.create({
   },
   style_______________________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 230,
+    right: 10,
     // right: "auto",
     top: 12,
     // bottom: "auto",
@@ -1769,7 +1762,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_514: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 65,
     transform: [{ translateX: 16 }, { translateY: 617 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -1795,7 +1788,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459_7: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -1812,7 +1805,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 60,
+    left:10,
     // right: "auto",
     top: 11,
     // bottom: "auto",
@@ -1830,7 +1823,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 137,
+    left: 77,
     // right: "auto",
     top: 11,
     // bottom: "auto",
@@ -1848,7 +1841,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 117,
+    left: 62,
     // right: "auto",
     top: 11,
     // bottom: "auto",
@@ -1864,9 +1857,9 @@ const stylesheet = StyleSheet.create({
   },
   style___________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 256,
+    right: 10,
     // right: "auto",
     top: 11,
     // bottom: "auto",
@@ -1929,8 +1922,8 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_509: {
     position: 'absolute',
-    width: 276,
-    height: 103,
+    width: 286,
+    height: 123,
     transform: [{ translateX: 83 }, { translateY: 207 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
@@ -1939,7 +1932,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 222,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -1958,7 +1951,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
@@ -2263,7 +2256,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_84: {
     position: 'absolute',
@@ -2276,7 +2269,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_85: {
     position: 'absolute',
@@ -2289,7 +2282,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_86: {
     position: 'absolute',
@@ -2302,7 +2295,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_87: {
     position: 'absolute',
@@ -2315,7 +2308,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_88: {
     position: 'absolute',
@@ -2328,7 +2321,7 @@ const stylesheet = StyleSheet.create({
     top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
-    backgroundColor: 'rgba(207, 87, 187, 1)'
+    backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Back2_1: {
     position: 'absolute',

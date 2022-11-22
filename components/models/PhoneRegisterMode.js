@@ -204,7 +204,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Button: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 115 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -212,7 +212,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -250,7 +250,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_467: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 55 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -258,7 +258,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -266,7 +266,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,

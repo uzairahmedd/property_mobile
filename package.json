@@ -9,13 +9,13 @@
     "web": "expo start --web",
     "lint": "prettier --write . && eslint . --fix",
     "test": "jest",
-    "jest": "jest --watchAll",
-    "prepare": "husky install"
+    "jest": "jest --watchAll"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo-google-fonts/dev": "^0.2.2",
     "@expo-google-fonts/tajawal": "^0.2.2",
     "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^0.17.0",
@@ -28,6 +28,7 @@
     "expo-asset": "~8.6.1",
     "expo-constants": "~13.2.4",
     "expo-font": "~10.2.1",
+    "expo-linear-gradient": "~11.4.0",
     "expo-linking": "~3.2.2",
     "expo-localization": "~13.1.0",
     "expo-splash-screen": "~0.16.2",

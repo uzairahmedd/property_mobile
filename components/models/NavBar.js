@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   ScrollView,
+  TouchableOpacity,
   StyleSheet,
   Dimensions
 } from 'react-native'
@@ -11,10 +12,10 @@ import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function NavBar() {
+export default function NavBar({navigation}) {
   return (
     <View style={stylesheet.style_AppBar}>
-      <View style={stylesheet.style_Home}>
+      <TouchableOpacity onPress={()=>{navigation.navigate("SettingsScreen")}} style={stylesheet.style_Home}>
         <View style={stylesheet.style_Group_496}>
           <View style={stylesheet.style_Rectangle_80}></View>
           <View style={stylesheet.style_More_1}>
@@ -102,8 +103,8 @@ export default function NavBar() {
             </Text>
           </View>
         </View>
-      </View>
-      <View style={stylesheet.style_Movimientos}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate("SearchScreenAuction")}} style={stylesheet.style_Movimientos}>
         <View style={stylesheet.style_Group_485}>
           <View style={stylesheet.style_Bid_1_2}>
             <View style={stylesheet.style_Group_30}>
@@ -200,8 +201,8 @@ export default function NavBar() {
             </Text>
           </View>
         </View>
-      </View>
-      <View style={stylesheet.style_Movimientos_2}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate("FavScreen")}} style={stylesheet.style_Movimientos_2}>
         <View style={stylesheet.style_Heart_2}>
           <View style={stylesheet.style_Group_39}>
             <Svg style={stylesheet.style_Vector_25} fill={'rgba(0,0,0,0)'}>
@@ -239,8 +240,8 @@ export default function NavBar() {
             المفضلة
           </Text>
         </View>
-      </View>
-      <View style={stylesheet.style_Card}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate("AddProperty1")}} style={stylesheet.style_Card}>
         <View style={stylesheet.style_Request_1}>
           <View style={stylesheet.style_Group_40}>
             <Svg
@@ -315,8 +316,8 @@ export default function NavBar() {
             اضافة عقار
           </Text>
         </View>
-      </View>
-      <View style={stylesheet.style_Wallet}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate("Home")}} style={stylesheet.style_Wallet}>
         <View style={stylesheet.style_Group_425}>
           <View style={stylesheet.style_Ellipse_1}></View>
           <View style={stylesheet.style_Plus}>
@@ -352,7 +353,7 @@ export default function NavBar() {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -1065,7 +1066,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_493: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 17,
     transform: [{ translateX: 16 }, { translateY: 154 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -1447,6 +1448,8 @@ const stylesheet = StyleSheet.create({
     paddingLeft: 8,
     paddingRight: 8,
     paddingBottom: 12,
+    marginRight:10,
+    marginLeft:10,
     display: 'flex',
     flexDirection: 'row'
   },
@@ -2068,7 +2071,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_464_4: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 455 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -2076,7 +2079,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_4: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -2194,7 +2197,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_496_2: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     transform: [{ translateX: 16 }, { translateY: 515 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -2202,7 +2205,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_5: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 48,
     borderRadius: 8,
     opacity: 1,

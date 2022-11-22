@@ -5,13 +5,15 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
+import { AntDesign } from '@expo/vector-icons'
 
-export default function PrivacyScreen() {
+export default function PrivacyScreen({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
@@ -24,7 +26,8 @@ export default function PrivacyScreen() {
       style={{ height: Dimensions.get('window').height }}
     >
       <View style={stylesheet.style_PrivacyScreen}>
-        <View
+        <TouchableOpacity
+        onPress={()=>{navigation.goBack()}}
           style={[
             stylesheet.style_title,
             { display: 'flex', flexDirection: 'row', alignItems: 'center' }
@@ -45,7 +48,16 @@ export default function PrivacyScreen() {
           >
             سياسة الخصوصية
           </Text>
-        </View>
+          <AntDesign
+            style={{
+              position: 'absolute',
+              right: 40
+            }}
+            name="rightcircleo"
+            size={24}
+            color="black"
+          />
+        </TouchableOpacity>
         <View
           style={[
             stylesheet.style_subtitle,
@@ -112,40 +124,6 @@ export default function PrivacyScreen() {
             أن يتم تركيبه على أي تصميم دون مشكلة فلن يبدو وكأنه نص منسوخ، غير
             منظم، غير منسق، أو حتى غير مفهوم. لأنه مازال نصاً بديلاً ومؤقتاً.
           </Text>
-        </View>
-        <View style={stylesheet.style_Back}>
-          <View style={stylesheet.style_Group}>
-            <View style={stylesheet.style_Group_2}>
-              <View style={stylesheet.style_Group_3}>
-                <View style={stylesheet.style_Group_4}>
-                  <Svg
-                    style={stylesheet.style_Vector}
-                    fill={'rgba(14, 14, 14, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 12 0 C 5.372578382492065 0 0 5.372578382492065 0 12 C 0 18.627421617507935 5.372578382492065 24 12 24 C 18.627421617507935 24 24 18.627421617507935 24 12 C 24 5.372578382492065 18.627421617507935 0 12 0 Z M 12 22.5 C 6.201000094413757 22.5 1.5 17.798999905586243 1.5 12 C 1.5 6.201000094413757 6.201000094413757 1.5 12 1.5 C 17.798999905586243 1.5 22.5 6.201000094413757 22.5 12 C 22.5 17.798999905586243 17.798999905586243 22.5 12 22.5 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                  <Svg
-                    style={stylesheet.style_Vector_2}
-                    fill={'rgba(14, 14, 14, 1)'}
-                  >
-                    <Path
-                      fillRule={'nonzero'}
-                      d={
-                        'M 6.218110084533691 0 L 0.2181093692779541 6 C -0.07270313054323196 6.292546883225441 -0.07270313054323196 6.764952287077904 0.2181093692779541 7.057499170303345 L 6.218110084533691 13.057499885559082 L 7.275609970092773 11.99250054359436 L 1.8081092834472656 6.5249998569488525 L 7.275609970092773 1.057499885559082 L 6.218110084533691 0 Z'
-                      }
-                      strokeLinejoin={'miter'}
-                    />
-                  </Svg>
-                </View>
-              </View>
-            </View>
-          </View>
         </View>
       </View>
     </ScrollView>
@@ -254,7 +232,8 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 117,
+    // left: 117,
+    width:"100%",
     // right: "auto",
     top: 57,
     // bottom: "auto",
@@ -288,7 +267,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Text: {
     position: 'absolute',
-    width: 343,
+    width: Dimensions.get("window").width - 20,
     height: 594,
     left: 16,
     // right: "auto",
