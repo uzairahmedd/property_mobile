@@ -51,7 +51,7 @@ export default function PrivacyScreen({navigation}) {
           <AntDesign
             style={{
               position: 'absolute',
-              right: 40
+              right: 20
             }}
             name="rightcircleo"
             size={24}
@@ -251,7 +251,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 234,
+    right: 20,
     // right: "auto",
     top: 116,
     // bottom: "auto",
@@ -269,7 +269,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: Dimensions.get("window").width - 20,
     height: 594,
-    left: 16,
+    // left: 16,
     // right: "auto",
     top: 147,
     // bottom: "auto",
@@ -281,7 +281,9 @@ const stylesheet = StyleSheet.create({
     color: 'rgba(14, 14, 14, 1)',
     textAlign: 'right',
     textAlignVertical: 'top',
-    letterSpacing: -0.30000001192092896
+    paddingRight:20,
+    paddingLeft:20,
+    // letterSpacing: -0.30000001192092896
   },
   style_Back: {
     position: 'absolute',

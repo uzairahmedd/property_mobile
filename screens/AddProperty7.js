@@ -5,13 +5,14 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function AddProperty7() {
+export default function AddProperty7({navigation}) {
   let [fontsLoaded] = useFonts({
     'SF Pro Text':
       'https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFProText-Regular.ttf'
@@ -140,7 +141,9 @@ export default function AddProperty7() {
             </Svg>
           </View>
         </View>
-        <View style={stylesheet.style_bi_x_circle}>
+        <TouchableOpacity onPress={() => {
+        navigation.goBack()
+        }} style={stylesheet.style_bi_x_circle}>
           <View style={stylesheet.style_Group}>
             <Svg
               style={stylesheet.style_Vector_2}
@@ -167,7 +170,7 @@ export default function AddProperty7() {
               />
             </Svg>
           </View>
-        </View>
+        </TouchableOpacity>
         <View style={stylesheet.style_Group_523}>
           <View style={stylesheet.style_Rectangle_89}></View>
           <View style={stylesheet.style_Frame_467}>
@@ -490,92 +493,6 @@ export default function AddProperty7() {
     </ScrollView>
   )
 }
-const Component_style_system___light___status_bar___default = ({
-  variant1_left,
-  variant1_right,
-  variant1_top,
-  variant1_bottom,
-  variant1_transform,
-  variant1_text1
-}) => {
-  return (
-    <View
-      style={[
-        component_style_system___light___status_bar___default_stylesheet.style_system___light___status_bar___default,
-        {
-          left: variant1_left,
-          // right: variant1_right,
-          top: variant1_top,
-          // bottom: variant1_bottom,
-          transform: variant1_transform
-        }
-      ]}
-    >
-      <View
-        style={[
-          component_style_system___light___status_bar___default_stylesheet.style_Time,
-          { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-        ]}
-      >
-        <Text
-          style={[
-            component_style_system___light___status_bar___default_stylesheet.style_Time,
-            {
-              position: 'relative',
-              // flexGrow: 1,
-              left: 0,
-              top: 0,
-              // height: "auto",
-              transform: [{ translateX: 0 }, { translateY: 0 }]
-            }
-          ]}
-        >
-          {variant1_text1}
-        </Text>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Battery
-        }
-      >
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Border
-          }
-        ></View>
-        <Svg
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Cap
-          }
-          fill={'rgba(0, 0, 0, 1)'}
-        >
-          <Path
-            fillRule={'nonzero'}
-            d={
-              'M 0 0 L 0 4 C 0.8047311305999756 3.6612234711647034 1.328037977218628 2.8731333017349243 1.328037977218628 2 C 1.328037977218628 1.1268666982650757 0.8047311305999756 0.33877652883529663 0 0 Z'
-            }
-            strokeLinejoin={'miter'}
-          />
-        </Svg>
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Capacity
-          }
-        ></View>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Wifi
-        }
-      ></View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Cellular_Connection
-        }
-      ></View>
-    </View>
-  )
-}
 
 const stylesheet = StyleSheet.create({
   style_AddProperty7: {
@@ -595,7 +512,7 @@ const stylesheet = StyleSheet.create({
     width: 157,
     height: 98,
     borderRadius: 0,
-    left: 109,
+    left: (Dimensions.get("window").width /2) - 77,
     // right: "auto",
     top: 153,
     // bottom: "auto",
@@ -603,9 +520,9 @@ const stylesheet = StyleSheet.create({
   },
   style______________: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 136,
+    left: 0,
     // right: "auto",
     top: 56,
     // bottom: "auto",
@@ -621,15 +538,15 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_506: {
     position: 'absolute',
-    width: 344,
+    width: "100%",
     height: 48,
-    transform: [{ translateX: 15 }, { translateY: 716 }, { rotate: '0deg' }],
+    transform: [{ translateX: 0 }, { translateY: 716 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Rectangle_74: {
     position: 'absolute',
-    width: 344,
+    width: "100%",
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -649,9 +566,9 @@ const stylesheet = StyleSheet.create({
   },
   style_______________2: {
     position: 'absolute',
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 132.9998779296875,
+    // left: 132.9998779296875,
     // right: "auto",
     top: 14,
     // bottom: "auto",
@@ -663,14 +580,14 @@ const stylesheet = StyleSheet.create({
     color: 'rgba(41, 32, 113, 1)',
     textAlign: 'center',
     textAlignVertical: 'top',
-    letterSpacing: -0.30000001192092896
+    // letterSpacing: -0.30000001192092896
   },
   style__________________________________________________________________________________________________________:
     {
       position: 'absolute',
-      width: 279,
+      width: Dimensions.get("window").width - 40,
       // height: "auto",
-      left: 48,
+      left: 20,
       // right: "auto",
       top: 311,
       // bottom: "auto",
@@ -682,13 +599,15 @@ const stylesheet = StyleSheet.create({
       color: 'rgba(14, 14, 14, 1)',
       textAlign: 'center',
       textAlignVertical: 'top',
-      letterSpacing: -0.30000001192092896
+      // letterSpacing: -0.30000001192092896
     },
   style_Group_522: {
     position: 'absolute',
     width: 99,
     height: 24,
-    transform: [{ translateX: 138 }, { translateY: 382 }, { rotate: '0deg' }],
+    top:382,
+    left: (Dimensions.get("window").width / 2 ) - 50,
+    // transform: [{ translateX: 138 }, { translateY: 382 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -782,7 +701,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: Dimensions.get("window").width - 20,
     height: 132,
-    transform: [{ translateX: 16 }, { translateY: 473 }, { rotate: '0deg' }],
+    transform: [{ translateX: 10 }, { translateY: 473 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -840,15 +759,15 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_467: {
     position: 'absolute',
-    width: 311,
+    width: Dimensions.get("window").width - 60,
     height: 48,
-    transform: [{ translateX: 16 }, { translateY: 34 }, { rotate: '0deg' }],
+    transform: [{ translateX: 20 }, { translateY: 34 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
   style_Group_464: {
     position: 'absolute',
-    width: 311,
+    width: "100%",
     height: 48,
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     overflow: 'hidden',
@@ -856,7 +775,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Rectangle_74_2: {
     position: 'absolute',
-    width: 311,
+    width: "100%",
     height: 48,
     borderRadius: 8,
     opacity: 1,
@@ -873,7 +792,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 235,
+    right: 20,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -927,7 +846,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 76,
+    right: 20,
     // right: "auto",
     top: 12,
     // bottom: "auto",
@@ -947,7 +866,7 @@ const stylesheet = StyleSheet.create({
     height: 122,
     borderRadius: 0,
     overflow: 'hidden',
-    left: 126,
+    left: (Dimensions.get("window").width / 2 ) - 61,
     // right: "auto",
     top: 133,
     // bottom: "auto",

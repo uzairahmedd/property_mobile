@@ -2449,7 +2449,7 @@ export default function FavScreen({navigation}) {
       </View>
     </ScrollView>
 
-      <View style={{ position: "absolute", bottom: 10 }}>
+      <View style={{ position: "absolute", bottom: 10, width:"100%"}}>
         <NavBar navigation={navigation} />
       </View>
     </View>

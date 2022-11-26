@@ -145,14 +145,14 @@ export default function AddProperty4({navigation}) {
           </View>
           </TouchableOpacity>
         </View>
-        <View style={stylesheet.style_Rectangle_82}></View>
+        <View style={stylesheet.style_Rectangle_82}>
         <View style={stylesheet.style_Rectangle_83}></View>
         <View style={stylesheet.style_Rectangle_84}></View>
         <View style={stylesheet.style_Rectangle_85}></View>
         <View style={stylesheet.style_Rectangle_86}></View>
         <View style={stylesheet.style_Rectangle_87}></View>
         <View style={stylesheet.style_Rectangle_88}></View>
-
+        </View>
 
         <View style={stylesheet.style_Group_510}>
           <View
@@ -580,90 +580,92 @@ const stylesheet = StyleSheet.create({
     width: '100%',
     height: 9,
     borderRadius: 0,
-    opacity: 0.15000000596046448,
-    left: 0,
+    // opacity: 0.15000000596046448,
+    // left: 0,
     // right: "auto",
     top: 90,
+    flexDirection:"row",
+    justifyContent:"space-around",
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(200, 200, 200, 0.15000000596046448)'
   },
   style_Rectangle_83: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 1,
     left: 0,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_84: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 1,
-    left: 63,
+    // left: 63,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_85: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 1,
-    left: 126,
+    // left: 126,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_86: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 1,
-    left: 190,
+    // left: 190,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_87: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 253,
+    // left: 253,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_88: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 316,
+    // left: 316,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Back2_1: {
@@ -763,7 +765,9 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: 239,
     height: 75,
-    transform: [{ translateX: 120 }, { translateY: 123 }, { rotate: '0deg' }],
+    top:123,
+    right:10,
+    // transform: [{ translateX: 120 }, { translateY: 123 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -771,7 +775,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 52,
+    right: 12,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -914,7 +918,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 221,
+    right: 10,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -930,14 +934,14 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459: {
     position: 'absolute',
-    width: Dimensions.get("window").width - 20,
+    width: Dimensions.get("window").width - 30,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
     borderStyle: 'solid',
     borderColor: 'rgba(41, 32, 113, 1)',
-    left: 0,
-    // right: "auto",
+    // left: 0,
+    right: 10,
     top: 27,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
@@ -947,7 +951,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    right: 20,
+    right: 10,
     // right: "auto",
     top: 12,
     // bottom: "auto",

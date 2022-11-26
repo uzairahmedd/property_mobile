@@ -1517,6 +1517,11 @@
   dependencies:
     cross-spawn "^7.0.3"
 
+"@expo/status-bar-height@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@expo/status-bar-height/-/status-bar-height-0.0.1.tgz#c39df6daa018fe10bba4b699cce8a881bfc6f9e4"
+  integrity sha512-kNaX1sZ1eF0M0GvEXaAtv/6BsiPHPIAxCjkUzcUQ58E1h1rsbqO/spPxedsJkw/GneXuNLXNy8+UTkWKARFLyw==
+
 "@expo/vector-icons@^13.0.0":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-13.0.0.tgz#e2989b85e95a82bce216f88cf8fb583ab050ec95"
@@ -2217,6 +2222,11 @@
   integrity sha512-FcFaxOr2V5KZCviw1TnutEMVUVsGt4D2hP1TAfXZAMKuHYW3xQhe3jTxNPWutgCJ3/X1c5yX8ZoGVEItxKbwBg==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/expo__status-bar-height@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@types/expo__status-bar-height/-/expo__status-bar-height-0.0.1.tgz#64f0ab9180e6ed2f873316b057481692fa3bf31c"
+  integrity sha512-u/HrofAD/cyg605f70TcAJiOdOoNDMApddEUr21cDA0EQIVTAq/VT8GsaePjY2R3lOvdMGJxxVdMAX9xj6Moqg==
 
 "@types/glob@^7.1.1":
   version "7.2.0"

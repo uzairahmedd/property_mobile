@@ -60,7 +60,7 @@ export default function TermsScreen({navigation}) {
           <AntDesign
             style={{
               position: 'absolute',
-              right: 40
+              right: 20
             }}
             name="rightcircleo"
             size={24}
@@ -104,7 +104,7 @@ export default function TermsScreen({navigation}) {
                 left: 0,
                 top: 0,
                 // height: "auto",
-                transform: [{ translateX: 0 }, { translateY: 0 }]
+                // transform: [{ translateX: 0 }, { translateY: 0 }]
               }
             ]}
           >
@@ -136,7 +136,7 @@ export default function TermsScreen({navigation}) {
         </View>
       </View>
     </ScrollView>
-    <View style={{position:"absolute",bottom:10}}>
+    <View style={{position:"absolute",bottom:10,width:"100%"}}>
     <NavBar navigation={navigation} />
     </View>
     </View>
@@ -176,7 +176,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 246,
+    right: 20,
     // right: "auto",
     top: 116,
     // bottom: "auto",
@@ -193,20 +193,24 @@ const stylesheet = StyleSheet.create({
   style_Text: {
     position: 'absolute',
     width: Dimensions.get("window").width - 20,
-    height: 594,
-    left: 16,
+    // height: 594,
+    // right: 20,
+    paddingLeft:20,
+    paddingRight:20,
     // right: "auto",
     top: 147,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     fontFamily: 'Tajawal',
     // fontWeight: 400,
     textDecorationLine: 'none',
     fontSize: 14,
     color: 'rgba(14, 14, 14, 1)',
     textAlign: 'right',
+    // textAlign: 'justify',
     textAlignVertical: 'top',
-    letterSpacing: -0.30000001192092896
+    lineHeight:16,
+    // letterSpacing: -0.30000001192092896
   },
   style_Back: {
     position: 'absolute',

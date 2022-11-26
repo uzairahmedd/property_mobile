@@ -256,14 +256,14 @@ style={[
             />
           </View>
         </View>
-        <View style={stylesheet.style_Rectangle_82}></View>
+        <View style={stylesheet.style_Rectangle_82}>
         <View style={stylesheet.style_Rectangle_83}></View>
         <View style={stylesheet.style_Rectangle_84}></View>
         <View style={stylesheet.style_Rectangle_85}></View>
         <View style={stylesheet.style_Rectangle_86}></View>
         <View style={stylesheet.style_Rectangle_87}></View>
         <View style={stylesheet.style_Rectangle_88}></View>
-
+        </View>
         <View style={stylesheet.style_Group_511}>
           <View
             style={[
@@ -452,92 +452,6 @@ style={[
         </View>
       </View>
     </ScrollView>
-  )
-}
-const Component_style_system___light___status_bar___default = ({
-  variant1_left,
-  variant1_right,
-  variant1_top,
-  variant1_bottom,
-  variant1_transform,
-  variant1_text1
-}) => {
-  return (
-    <View
-      style={[
-        component_style_system___light___status_bar___default_stylesheet.style_system___light___status_bar___default,
-        {
-          left: variant1_left,
-          // right: variant1_right,
-          top: variant1_top,
-          // bottom: variant1_bottom,
-          transform: variant1_transform
-        }
-      ]}
-    >
-      <View
-        style={[
-          component_style_system___light___status_bar___default_stylesheet.style_Time,
-          { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-        ]}
-      >
-        <Text
-          style={[
-            component_style_system___light___status_bar___default_stylesheet.style_Time,
-            {
-              position: 'relative',
-              // flexGrow: 1,
-              left: 0,
-              top: 0,
-              // height: "auto",
-              transform: [{ translateX: 0 }, { translateY: 0 }]
-            }
-          ]}
-        >
-          {variant1_text1}
-        </Text>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Battery
-        }
-      >
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Border
-          }
-        ></View>
-        <Svg
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Cap
-          }
-          fill={'rgba(0, 0, 0, 1)'}
-        >
-          <Path
-            fillRule={'nonzero'}
-            d={
-              'M 0 0 L 0 4 C 0.8047311305999756 3.6612234711647034 1.328037977218628 2.8731333017349243 1.328037977218628 2 C 1.328037977218628 1.1268666982650757 0.8047311305999756 0.33877652883529663 0 0 Z'
-            }
-            strokeLinejoin={'miter'}
-          />
-        </Svg>
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Capacity
-          }
-        ></View>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Wifi
-        }
-      ></View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Cellular_Connection
-        }
-      ></View>
-    </View>
   )
 }
 
@@ -808,90 +722,92 @@ const stylesheet = StyleSheet.create({
     width: '100%',
     height: 9,
     borderRadius: 0,
-    opacity: 0.15000000596046448,
-    left: 0,
+    // opacity: 0.15000000596046448,
+    // left: 0,
     // right: "auto",
     top: 90,
+    flexDirection:"row",
+    justifyContent:"space-around",
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(200, 200, 200, 0.15000000596046448)'
   },
   style_Rectangle_83: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 1,
     left: 0,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_84: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 63,
+    // left: 63,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
     transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_85: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 126,
+    // left: 126,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_86: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 190,
+    // left: 190,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_87: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 253,
+    // left: 253,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Rectangle_88: {
-    position: 'absolute',
+    // position: 'absolute',
     width: 59,
     height: 9,
     borderRadius: 0,
     opacity: 0.20000000298023224,
-    left: 316,
+    // left: 316,
     // right: "auto",
-    top: 90,
+    // top: 90,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(29, 161, 242, 1)'
   },
   style_Back2_1: {

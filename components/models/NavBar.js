@@ -1425,7 +1425,7 @@ const stylesheet = StyleSheet.create({
   },
   style_AppBar: {
     // position: "absolute",
-    // width: "auto",
+    width: 360,
     // height: "auto",
     borderRadius: 8,
     borderWidth: 0.5,
@@ -1435,7 +1435,7 @@ const stylesheet = StyleSheet.create({
     // right: "auto",
     // top: 716,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     shadowColor: 'rgb(108, 99, 171)',
     shadowOffset: {
       width: -10,
@@ -1448,8 +1448,9 @@ const stylesheet = StyleSheet.create({
     paddingLeft: 8,
     paddingRight: 8,
     paddingBottom: 12,
-    marginRight:10,
-    marginLeft:10,
+    // marginRight:10,
+    // marginLeft:10,
+    alignSelf:"center",
     display: 'flex',
     flexDirection: 'row'
   },

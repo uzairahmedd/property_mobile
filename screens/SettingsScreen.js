@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { Svg, Path } from "react-native-svg";
 
@@ -701,7 +702,7 @@ export default function SettingsScreen({navigation}) {
           <View style={stylesheet.style_Line_10}></View>
           <View style={stylesheet.style_Line_11}></View>
 
-          <View style={stylesheet.style_Group_464_4}>
+          <TouchableOpacity onPress={()=>{navigation.navigate("TermsScreen")}} style={stylesheet.style_Group_464_4}>
             <View style={stylesheet.style_Rectangle_74_4}></View>
             <View style={stylesheet.style_Privacy_policy_1}>
               <View style={stylesheet.style_Group_42}>
@@ -779,8 +780,8 @@ export default function SettingsScreen({navigation}) {
                 الشروط و الأحكام
               </Text>
             </View>
-          </View>
-          <View style={stylesheet.style_Group_496_2}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("PrivacyScreen")}}  style={stylesheet.style_Group_496_2}>
             <View style={stylesheet.style_Rectangle_74_5}></View>
             <View style={stylesheet.style_Terms_2}>
               <View style={stylesheet.style_Group_44}>
@@ -988,10 +989,10 @@ export default function SettingsScreen({navigation}) {
                 سياسة الخصوصية
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
-      <View style={{ position: "absolute", bottom: 10 }}>
+      <View style={{ position: "absolute", bottom: 10, width:"100%" }}>
         <NavBar navigation={navigation} />
       </View>
     </View>
@@ -1302,7 +1303,9 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: 101,
     height: 100,
-    transform: [{ translateX: 258 }, { translateY: 195 }, { rotate: "0deg" }],
+    top:195,
+    right:16,
+    // transform: [{ translateX: 258 }, { translateY: 195 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -1414,7 +1417,9 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: 101,
     height: 100,
-    transform: [{ translateX: 137 }, { translateY: 195 }, { rotate: "0deg" }],
+    top:195,
+    left:(Dimensions.get("window").width / 2 )- 50,
+    // transform: [{ translateX: 137 }, { translateY: 195 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -1604,7 +1609,9 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: 101,
     height: 100,
-    transform: [{ translateX: 16 }, { translateY: 195 }, { rotate: "0deg" }],
+    top:195,
+    left:16,
+    // transform: [{ translateX: 16 }, { translateY: 195 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -1794,15 +1801,14 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: Dimensions.get("window").width - 20,
     height: 17,
-    transform: [{ translateX: 16 }, { translateY: 154 }, { rotate: "0deg" }],
+    transform: [{ translateX: 10 }, { translateY: 154 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
   style____________: {
     position: "absolute",
-    // width: "auto",
+    width: "100%",
     // height: "auto",
-    left: 138,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -1824,7 +1830,7 @@ const stylesheet = StyleSheet.create({
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "rgba(200, 200, 200, 1)",
-    left: 213,
+    right: 0,
     // right: "auto",
     top: 8,
     // bottom: "auto",
@@ -1848,7 +1854,9 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: 132,
     height: 32,
-    transform: [{ translateX: 219 }, { translateY: 596 }, { rotate: "0deg" }],
+    top:596,
+    right:20,
+    // transform: [{ translateX: 0 }, { translateY: 596 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -1955,7 +1963,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 296,
+    right: 20,
     // right: "auto",
     top: 335,
     // bottom: "auto",
@@ -1973,7 +1981,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 262,
+    right: 20,
     // right: "auto",
     top: 368,
     // bottom: "auto",
@@ -1991,7 +1999,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 326,
+    right: 20,
     // right: "auto",
     top: 665,
     // bottom: "auto",
@@ -2027,7 +2035,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 207,
+    right: 20,
     // right: "auto",
     top: 401,
     // bottom: "auto",
@@ -2797,7 +2805,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: Dimensions.get("window").width - 20,
     height: 48,
-    transform: [{ translateX: 16 }, { translateY: 455 }, { rotate: "0deg" }],
+    transform: [{ translateX: 10 }, { translateY: 455 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -2822,7 +2830,7 @@ const stylesheet = StyleSheet.create({
     height: 24,
     borderRadius: 0,
     overflow: "hidden",
-    left: 307,
+    right: 10,
     // right: "auto",
     top: 12,
     // bottom: "auto",
@@ -2905,7 +2913,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 187,
+    right: 50,
     // right: "auto",
     top: 16,
     // bottom: "auto",
@@ -2923,7 +2931,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     width: Dimensions.get("window").width - 20,
     height: 48,
-    transform: [{ translateX: 16 }, { translateY: 515 }, { rotate: "0deg" }],
+    transform: [{ translateX: 10 }, { translateY: 515 }, { rotate: "0deg" }],
     overflow: "hidden",
     backgroundColor: "rgba(0,0,0,0)",
   },
@@ -2948,7 +2956,7 @@ const stylesheet = StyleSheet.create({
     height: 24,
     borderRadius: 0,
     overflow: "hidden",
-    left: 307,
+    right: 10,
     // right: "auto",
     top: 12,
     // bottom: "auto",
@@ -3177,7 +3185,7 @@ const stylesheet = StyleSheet.create({
     position: "absolute",
     // width: "auto",
     // height: "auto",
-    left: 177,
+    right: 50,
     // right: "auto",
     top: 16,
     // bottom: "auto",

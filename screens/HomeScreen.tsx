@@ -13,14 +13,16 @@ import NavBar from "../components/models/NavBar";
 export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView
+      style={{padding:0}}
+      >
         <CityList />
         {/* <CityListItem city='الرياض' count={250}/> */}
         <PropertyList title={"أضيفت مؤخرا"} label={"للبيع"} />
         <PropertyList title={"أضيفت مؤخرا"} label={"للايجار"} />
       </ScrollView>
 
-      <View style={{ position: "absolute", bottom: 10 }}>
+      <View style={{ position: "absolute", bottom: 10, width:"100%" }}>
         <NavBar navigation={navigation} />
       </View>
     </View>
@@ -29,7 +31,8 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    flex:1,
+    // padding: 20,
   },
   title: {
     fontSize: 20,
