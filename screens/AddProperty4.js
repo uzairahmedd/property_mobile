@@ -533,7 +533,9 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: 102.33000183105469,
     height: 48,
-    transform: [{ translateX: 257 }, { translateY: 716 }, { rotate: '0deg' }],
+    top:716,
+    right:20,
+    // transform: [{ translateX: 257 }, { translateY: 716 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },

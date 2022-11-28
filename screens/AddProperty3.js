@@ -6,7 +6,8 @@ import {
   ScrollView,
   StyleSheet,
   Dimensions,
-  TouchableOpacity
+  TouchableOpacity,
+  TextInput
 } from 'react-native'
 import { Svg, Path } from 'react-native-svg'
 
@@ -963,7 +964,8 @@ export default function AddProperty3({navigation}) {
                 { display: 'flex', flexDirection: 'row', alignItems: 'center' }
               ]}
             >
-              <Text
+              <TextInput
+              placeholder='إجمالي الأدوار'
                 style={[
                   stylesheet.style________________2,
                   {
@@ -975,9 +977,7 @@ export default function AddProperty3({navigation}) {
                     transform: [{ translateX: 0 }, { translateY: 0 }]
                   }
                 ]}
-              >
-                إجمالي الأدوار
-              </Text>
+              />
             </View>
             <View style={stylesheet.style_arrow_1}>
               <View style={stylesheet.style_Group}>
@@ -1455,92 +1455,6 @@ export default function AddProperty3({navigation}) {
     </ScrollView>
   )
 }
-const Component_style_system___light___status_bar___default = ({
-  variant1_left,
-  variant1_right,
-  variant1_top,
-  variant1_bottom,
-  variant1_transform,
-  variant1_text1
-}) => {
-  return (
-    <View
-      style={[
-        component_style_system___light___status_bar___default_stylesheet.style_system___light___status_bar___default,
-        {
-          left: variant1_left,
-          // right: variant1_right,
-          top: variant1_top,
-          // bottom: variant1_bottom,
-          transform: variant1_transform
-        }
-      ]}
-    >
-      <View
-        style={[
-          component_style_system___light___status_bar___default_stylesheet.style_Time,
-          { display: 'flex', flexDirection: 'row', alignItems: 'center' }
-        ]}
-      >
-        <Text
-          style={[
-            component_style_system___light___status_bar___default_stylesheet.style_Time,
-            {
-              position: 'relative',
-              // flexGrow: 1,
-              left: 0,
-              top: 0,
-              // height: "auto",
-              transform: [{ translateX: 0 }, { translateY: 0 }]
-            }
-          ]}
-        >
-          {variant1_text1}
-        </Text>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Battery
-        }
-      >
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Border
-          }
-        ></View>
-        <Svg
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Cap
-          }
-          fill={'rgba(0, 0, 0, 1)'}
-        >
-          <Path
-            fillRule={'nonzero'}
-            d={
-              'M 0 0 L 0 4 C 0.8047311305999756 3.6612234711647034 1.328037977218628 2.8731333017349243 1.328037977218628 2 C 1.328037977218628 1.1268666982650757 0.8047311305999756 0.33877652883529663 0 0 Z'
-            }
-            strokeLinejoin={'miter'}
-          />
-        </Svg>
-        <View
-          style={
-            component_style_system___light___status_bar___default_stylesheet.style_Capacity
-          }
-        ></View>
-      </View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Wifi
-        }
-      ></View>
-      <View
-        style={
-          component_style_system___light___status_bar___default_stylesheet.style_Cellular_Connection
-        }
-      ></View>
-    </View>
-  )
-}
 
 const stylesheet = StyleSheet.create({
   style_AddProperty3: {
@@ -1592,9 +1506,10 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_468: {
     position: 'absolute',
-    width: 228.6666717529297,
+    width: Dimensions.get("window").width - 40,
+    // width: 228.6666717529297,
     height: 48,
-    transform: [{ translateX: 16 }, { translateY: 716 }, { rotate: '0deg' }],
+    transform: [{ translateX: 20 }, { translateY: 716 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -1640,7 +1555,9 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     width: 102.33000183105469,
     height: 48,
-    transform: [{ translateX: 257 }, { translateY: 716 }, { rotate: '0deg' }],
+    top:716,
+    right:20,
+    // transform: [{ translateX: 257 }, { translateY: 716 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -1684,9 +1601,13 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_510: {
     position: 'absolute',
-    width: 319,
+    // width: Dimensions.get("window").width - 40,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 40 }, { translateY: 123 }, { rotate: '0deg' }],
+    right:20,
+    top:123,
+    // padding:3,
+    // transform: [{ translateX: 20 }, { translateY: 123 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -1694,7 +1615,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 264,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -1713,11 +1634,11 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
-    transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
+    // transform: [{ translateX: 0 }, { translateY: 0 }, { rotate: '0deg' }],
     backgroundColor: 'rgba(0,0,0,0)',
     paddingTop: 0,
     paddingLeft: 0,
@@ -1944,7 +1865,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459: {
     position: 'relative',
-    // width: "auto",
+    // width: 70,
     // height: "auto",
     borderRadius: 8,
     minWidth: 0,
@@ -1979,9 +1900,11 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_515: {
     position: 'absolute',
-    width: 238,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 121 }, { translateY: 207 }, { rotate: '0deg' }],
+    top:207,
+    right:20,
+    // transform: [{ translateX: 121 }, { translateY: 207 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -1989,7 +1912,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 171,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -2008,7 +1931,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
@@ -2238,9 +2161,11 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_518: {
     position: 'absolute',
-    width: 238,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 121 }, { translateY: 459 }, { rotate: '0deg' }],
+    top:459,
+    right:20,
+    // transform: [{ translateX: 121 }, { translateY: 459 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -2248,7 +2173,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 168,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -2267,7 +2192,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
@@ -2497,9 +2422,11 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_520: {
     position: 'absolute',
-    width: 286,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 73 }, { translateY: 543 }, { rotate: '0deg' }],
+    top:543,
+    right:20,
+    // transform: [{ translateX: 73 }, { translateY: 543 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -2507,7 +2434,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 250,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -2526,7 +2453,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
@@ -2648,9 +2575,9 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_514: {
     position: 'absolute',
-    width: Dimensions.get("window").width - 20,
+    width: Dimensions.get("window").width - 40,
     height: 65,
-    transform: [{ translateX: 16 }, { translateY: 627 }, { rotate: '0deg' }],
+    transform: [{ translateX: 20 }, { translateY: 627 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -2658,7 +2585,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 285,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -2674,7 +2601,7 @@ const stylesheet = StyleSheet.create({
   },
   style_Frame_459_3: {
     position: 'absolute',
-    width: Dimensions.get("window").width - 20,
+    width: Dimensions.get("window").width - 40,
     height: 38,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -2745,7 +2672,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 257,
+    right: 20,
     // right: "auto",
     top: 10,
     // bottom: "auto",
@@ -2808,9 +2735,11 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_516: {
     position: 'absolute',
-    width: 325,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 34 }, { translateY: 291 }, { rotate: '0deg' }],
+    top:291,
+    right:20,
+    // transform: [{ translateX: 34 }, { translateY: 291 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -2818,7 +2747,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 287,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -2837,7 +2766,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",
@@ -3103,9 +3032,11 @@ const stylesheet = StyleSheet.create({
   },
   style_Group_517: {
     position: 'absolute',
-    width: 325,
+    width: "100%",
     height: 60,
-    transform: [{ translateX: 34 }, { translateY: 375 }, { rotate: '0deg' }],
+    top:375,
+    right:20,
+    // transform: [{ translateX: 34 }, { translateY: 375 }, { rotate: '0deg' }],
     overflow: 'hidden',
     backgroundColor: 'rgba(0,0,0,0)'
   },
@@ -3113,7 +3044,7 @@ const stylesheet = StyleSheet.create({
     position: 'absolute',
     // width: "auto",
     // height: "auto",
-    left: 281,
+    right: 0,
     // right: "auto",
     top: 0,
     // bottom: "auto",
@@ -3132,7 +3063,7 @@ const stylesheet = StyleSheet.create({
     // width: "auto",
     // height: "auto",
     borderRadius: 0,
-    left: 0,
+    right: 0,
     // right: "auto",
     top: 27,
     // bottom: "auto",

@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignSelf: "center",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
 
     width: Dimensions.get("window").width,
     height: 260,

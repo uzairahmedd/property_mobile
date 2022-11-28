@@ -41,12 +41,12 @@ const ListItem = ({ style }: Props) => {
           </View>
         </ImageBackground>
         <View style={{ padding: 5 }}>
-          <Text style={{ fontSize: 18 }}>
+          <Text style={{ fontSize: 18,textAlign:"right" }}>
             فيلا إطلالة مميزة في حي سكني هادئ
           </Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
             <Feather name="map-pin" />
-            <Text style={{ fontSize: 14, marginLeft: 10 }}>
+            <Text style={{ fontSize: 14, marginRight: 10 }}>
               {'فيلا إطلالة مميزة في حي سكني هادئ'}
             </Text>
           </View>

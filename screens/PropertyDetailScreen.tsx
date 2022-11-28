@@ -3,7 +3,8 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from 'react-native'
 import { Button, Divider } from 'react-native-paper'
 import EditScreenInfo from '../components/EditScreenInfo'
@@ -15,8 +16,9 @@ import KeyValueList from '../components/keyValueList'
 import PropertyFeatures from '../components/propertyDetail/propertyFeatures'
 import ImageCarousel from '../components/generic/imageCarousel'
 import BottomActions from '../components/propertyDetail/bottomActions'
+import { AntDesign } from '@expo/vector-icons'
 
-export default function AddPropertyScreen() {
+export default function AddPropertyScreen({navigation}) {
   const carouselItems = [
     {
       title: 'Item 1',
@@ -85,6 +87,24 @@ export default function AddPropertyScreen() {
       style={{ backgroundColor: '#fff' }}
       contentContainerStyle={{ backgroundColor: '#fff' }}
     >
+      <TouchableOpacity onPress={() => {
+        navigation.goBack()
+        }}
+        style={{
+          zIndex:2
+        }}
+        >
+        <AntDesign
+            style={{
+              position: 'absolute',
+              right: 20,
+              top:20
+            }}
+            name="rightcircleo"
+            size={24}
+            color="white"
+          />
+        </TouchableOpacity>
       <ImageCarousel items={carouselItems} />
 
       <View style={{ padding: 20 }}>
