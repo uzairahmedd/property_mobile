@@ -3,16 +3,18 @@ import { Text } from 'react-native-paper'
 import Badge from '../badge'
 import ListItem from '../porpertyListItem'
 interface Props {
+  data: any,
   title?: string
   label: string
 }
 
-const List = ({ title, label }: Props) => {
+const List = ({ data, title, label }: Props) => {
+  // console.log(data)
   return (
     <View style={{ marginVertical: 10 }}>
       <View
         style={{
-          flexDirection: 'row-reverse',
+          flexDirection: 'row',
           justifyContent: 'flex-start',
           alignItems: 'center',
           paddingVertical: 5
@@ -28,11 +30,11 @@ const List = ({ title, label }: Props) => {
       <FlatList
         horizontal
         snapToEnd
-        inverted={true}
+        // inverted={true}
         nestedScrollEnabled={true}
         showsHorizontalScrollIndicator={false}
-        data={[{ id: '1' }, { id: '2' }]}
-        renderItem={() => <ListItem />}
+        data={data}
+        renderItem={({item, index}) => <ListItem data={item} />}
         keyExtractor={(item) => item.id}
       />
     </View>

@@ -5,7 +5,8 @@ import ImageCarousel from '../components/generic/imageCarousel'
 import Input from '../components/generic/textInput'
 import { View } from '../components/Themed'
 
-const AppointmentScreen = () => {
+const AppointmentScreen = ({ route }: any) => {
+  const { photos } = route.params
   const carouselItems = [
     {
       title: 'Item 1',
@@ -42,7 +43,7 @@ const AppointmentScreen = () => {
       style={{ backgroundColor: '#fff' }}
       contentContainerStyle={{ backgroundColor: '#fff' }}
     >
-      <ImageCarousel items={carouselItems} />
+      <ImageCarousel items={photos} />
 
       <View style={{ paddingHorizontal: 20, paddingVertical: 50 }}>
         <Input

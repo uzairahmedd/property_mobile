@@ -16,9 +16,12 @@ import KeyValueList from '../components/keyValueList'
 import PropertyFeatures from '../components/propertyDetail/propertyFeatures'
 import ImageCarousel from '../components/generic/imageCarousel'
 import BottomActions from '../components/propertyDetail/bottomActions'
+import { RootStackScreenProps } from "../types";
 import { AntDesign } from '@expo/vector-icons'
 
-export default function AddPropertyScreen({navigation}) {
+export default function PropertyDetailScreen({navigation, route} : RootStackScreenProps<"PropertyDetail">) {
+  const { data } = route.params
+  const { photos, title, price, description } = data
   const carouselItems = [
     {
       title: 'Item 1',
@@ -91,21 +94,21 @@ export default function AddPropertyScreen({navigation}) {
         navigation.goBack()
         }}
         style={{
-          zIndex:2
+          zIndex:2,
         }}
         >
         <AntDesign
             style={{
               position: 'absolute',
-              right: 20,
-              top:20
+              left: 20,
+              top: 30
             }}
             name="rightcircleo"
             size={24}
             color="white"
           />
-        </TouchableOpacity>
-      <ImageCarousel items={carouselItems} />
+      </TouchableOpacity>
+      <ImageCarousel items={photos} />
 
       <View style={{ padding: 20 }}>
         {/* Title and location */}
@@ -113,15 +116,15 @@ export default function AddPropertyScreen({navigation}) {
           <Text
             style={{
               fontSize: 18,
-              textAlign: 'right',
+              textAlign: 'left',
               color: '#292071'
             }}
           >
-            فيلا إطلالة مميزة في حي سكني هادئ
+            {title}
           </Text>
           <View
             style={{
-              flexDirection: 'row-reverse',
+              flexDirection: 'row',
               justifyContent: 'flex-start',
               alignItems: 'center',
               marginVertical: 10
@@ -149,7 +152,7 @@ export default function AddPropertyScreen({navigation}) {
             color: '#292071'
           }}
         >
-          4.5 مليون ر.س
+          {price.price} ر.س
         </Text>
 
         <Divider style={{ marginVertical: 20 }} />
@@ -189,8 +192,7 @@ export default function AddPropertyScreen({navigation}) {
             color: '#848484'
           }}
         >
-          شرح وصف العقار. هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة،
-          لقد تم توليد هذا النص من مولد النص العربى،
+          {description}
         </Text>
 
         <Divider style={{ marginVertical: 10 }} />
@@ -206,7 +208,7 @@ export default function AddPropertyScreen({navigation}) {
         {/* Property Features */}
         <PropertyFeatures data={['غرف ملابس', 'غرفة أطفال', 'مسبح خاص']} />
 
-        <BottomActions />
+        <BottomActions data={data} />
       </View>
     </ScrollView>
   )

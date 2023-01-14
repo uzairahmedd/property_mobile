@@ -11,7 +11,7 @@ import Badge from "../../components/badge";
 
 const _renderItem = ({ item, index }: any) => {
   return (
-    <ImageBackground style={styles.imageContainer} source={item.image}>
+    <ImageBackground style={styles.imageContainer} source={{ uri: 'http:' + item }}>
       <Badge
         text={"للبيع"}
         style={{ backgroundColor: "#2894CF", marginTop: 70 }}
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignSelf: "center",
-    alignItems: "flex-start",
+    alignItems: "flex-end",
 
     width: Dimensions.get("window").width,
     height: 260,

@@ -12,7 +12,7 @@ const CityList = () => {
     <View style={{ marginVertical: 10 }}>
       <FlatList
         horizontal
-        // style={{flexDirection:"row-reverse"}}
+        style={{flexDirection:"row"}}
         snapToEnd
         inverted={true}
         nestedScrollEnabled={true}

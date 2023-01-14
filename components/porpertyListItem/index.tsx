@@ -12,21 +12,29 @@ import React from 'react'
 import { Text } from '../Themed'
 
 interface Props {
+  data: any,
   style?: {}
 }
 
-const ListItem = ({ style }: Props) => {
+const ListItem = ({ data, style }: Props) => {
+  const {
+    description,
+    media,
+    title,
+    price
+  } = data
+  // console.log(data)
   const navigation = useNavigation()
   return (
     <>
       <TouchableOpacity
         style={{ marginLeft: 10 }}
-        onPress={() => navigation.navigate('PropertyDetail')}
+        onPress={() => navigation.navigate('PropertyDetail', { data })}
       >
         <ImageBackground
           style={[styles.imageContainer, style]}
           imageStyle={{ borderRadius: 10 }}
-          source={require('../../assets/images/sample-property-2.png')}
+          source={{uri: "http:" + media.url}}
         >
           <Badge text={'للبيع'} style={{ backgroundColor: '#2894CF' }} />
           <Badge
@@ -36,15 +44,15 @@ const ListItem = ({ style }: Props) => {
 
           <View style={styles.priceView}>
             <Text style={[styles.badgeText, { fontWeight: 'bold' }]}>
-              4.5 مليون ر.س
+              {price.price} ر.س
             </Text>
           </View>
         </ImageBackground>
         <View style={{ padding: 5 }}>
-          <Text style={{ fontSize: 18,textAlign:"right" }}>
-            فيلا إطلالة مميزة في حي سكني هادئ
+          <Text style={{ fontSize: 18, textAlign: 'left' }}>
+            {title}
           </Text>
-          <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Feather name="map-pin" />
             <Text style={{ fontSize: 14, marginRight: 10 }}>
               {'فيلا إطلالة مميزة في حي سكني هادئ'}
@@ -61,7 +69,6 @@ export default ListItem
 const styles = StyleSheet.create({
   imageContainer: {
     alignItems: 'flex-end',
-    backgroundColor: 'green',
     width: 300,
     height: 170,
     borderRadius: 10

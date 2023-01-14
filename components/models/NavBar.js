@@ -12,7 +12,7 @@ import { Svg, Path } from 'react-native-svg'
 
 import { useFonts } from '@expo-google-fonts/dev'
 
-export default function NavBar({navigation}) {
+export default function NavBar({navigation, isLoggedIn, unauthAction}) {
   return (
     <View style={stylesheet.style_AppBar}>
       <TouchableOpacity onPress={()=>{navigation.navigate("SettingsScreen")}} style={stylesheet.style_Home}>
@@ -241,7 +241,15 @@ export default function NavBar({navigation}) {
           </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=>{navigation.navigate("AddProperty1")}} style={stylesheet.style_Card}>
+      <TouchableOpacity onPress={()=>{
+        if(!isLoggedIn && unauthAction){
+          console.log('--here--', isLoggedIn, unauthAction)
+          unauthAction(true)
+        } else {
+          console.log(navigation)
+          navigation.navigate("AddProperty1")
+        }
+      }} style={stylesheet.style_Card}>
         <View style={stylesheet.style_Request_1}>
           <View style={stylesheet.style_Group_40}>
             <Svg

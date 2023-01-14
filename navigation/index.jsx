@@ -41,6 +41,7 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import i18n from "../locale/index";
 import { Text } from "../components/Themed";
+import SignUpScreen from "../screens/SignUpScreen";
 import OTPScreen from "../screens/OTPScreen";
 
 import AddOfferScreen from "../screens/AddOfferScreen";
@@ -76,13 +77,13 @@ import RoomsModel from "../components/models/RoomsModel";
 import SortModel from "../components/models/SortModel";
 import NavBar from "../components/models/NavBar";
 
-export default function Navigation({ colorScheme }) {
+export default function Navigation({ colorScheme, isLoggedIn }) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
-      <RootNavigator />
+      <RootNavigator isLoggedIn={isLoggedIn} />
     </NavigationContainer>
   );
 }
@@ -96,20 +97,20 @@ const Stack = createNativeStackNavigator();
 const Logo = ({ style = {} }) => {
   return (
     <Image
-      style={[{ width: 110, height: 40, margin: 10 }, style]}
+      style={[{ width: 110, height: 30, margin: 10 }, style]}
       resizeMode="contain"
       source={require("../assets/images/logo.png")}
     />
   );
 };
 
-function RootNavigator() {
+function RootNavigator({isLoggedIn}) {
   return (
     <Stack.Navigator
     >
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={(props) => <BottomTabNavigator {...props} isLoggedIn={isLoggedIn} />}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -118,6 +119,11 @@ function RootNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="SignUpScreen"
+        component={SignUpScreen}
+        options={{ headerShown: false }}
+      />
+       <Stack.Screen
         name="OTPScreen"
         component={OTPScreen}
         options={{ headerShown: false }}
@@ -139,8 +145,8 @@ function RootNavigator() {
           headerTitle: "",
         })}
       />
-      <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+      <Stack.Group screenOptions={{ presentation: "modal", headerTitle: "", headerShown: false }}>
+        <Stack.Screen name="status" component={ModalScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -153,7 +159,7 @@ function RootNavigator() {
 // const BottomTab = createBottomTabNavigator();
 const BottomTab = createNativeStackNavigator();
 
-function BottomTabNavigator() {
+function BottomTabNavigator({isLoggedIn}) {
   const colorScheme = useColorScheme();
   // let initRoute = "AddOfferScreen";
   // initRoute = "AddProperty1";
@@ -187,7 +193,6 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Home"
-        component={HomeScreen}
         options={({ navigation }) => ({
           title: "Home",
           // headerShown: false,
@@ -196,7 +201,7 @@ function BottomTabNavigator() {
           headerLeft: () => {
             return (
               <View
-                style={{ flexDirection: "row-reverse", alignItems: "center" }}
+                style={{ flexDirection: "row", alignItems: "center"}}
               >
                 <AntDesign
                   name="pluscircleo"
@@ -209,7 +214,9 @@ function BottomTabNavigator() {
           },
           headerTitle: "",
         })}
-      />
+      >
+        { (props) => <HomeScreen {...props} isLoggedIn={isLoggedIn} /> }
+      </BottomTab.Screen>
       <BottomTab.Screen
         name="AddProperty"
         component={() => null}

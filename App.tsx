@@ -6,6 +6,8 @@ import StatusBarHeight from '@expo/status-bar-height';
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
 import Navigation from "./navigation";
+import useAppReducer from './hooks/useAuthReducer';
+import AuthProvider from './providers/authProvider';
 import { I18nManager, StatusBar as st, View } from "react-native";
 import {
   useFonts,
@@ -17,12 +19,12 @@ import {
   Tajawal_800ExtraBold,
   Tajawal_900Black,
 } from "@expo-google-fonts/tajawal";
-import OTPScreen from "./screens/OTPScreen";
+import SignUpScreen from "./screens/SignUpScreen";
 import React, { useEffect, useState } from "react";
 
 export default function App() {
-  I18nManager.allowRTL(false);
-  I18nManager.forceRTL(false);
+  I18nManager.allowRTL(true);
+  I18nManager.forceRTL(true);
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
   const [height,setHeight] =useState(0)
@@ -45,18 +47,22 @@ export default function App() {
     Tajawal: Tajawal_400Regular,
   });
 
+  const [state, dispatch] = useAppReducer()
+
   if (!isLoadingComplete || !fontsLoaded) {
     return null;
   } else {
     return (
-      <PaperProvider>
-        <SafeAreaProvider>
-          <View style={{ flex:1,paddingTop: height }}>
-            <Navigation colorScheme={colorScheme} />
-            <StatusBar />
-          </View>
-        </SafeAreaProvider>
-      </PaperProvider>
+      <AuthProvider state={state} dispatch={dispatch}>
+        <PaperProvider>
+          <SafeAreaProvider>
+            <View style={{ flex:1,paddingTop: height }}>
+              <Navigation colorScheme={colorScheme} isLoggedIn={!!state.userToken} />
+              <StatusBar />
+            </View>
+          </SafeAreaProvider>
+        </PaperProvider>
+      </AuthProvider>
     );
   }
 }

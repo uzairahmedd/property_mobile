@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Button } from 'react-native-paper'
 import { View } from '../../components/Themed'
 
-const BottomActions = () => {
+const BottomActions = ({data}: any) => {
   const navigation = useNavigation()
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -27,7 +27,7 @@ const BottomActions = () => {
       <Button
         mode="contained"
         icon="phone"
-        onPress={() => navigation.navigate('Appointment')}
+        onPress={() => navigation.navigate('Appointment', data)}
         style={{ borderRadius: 8, width: '65%' }}
         labelStyle={{ fontSize: 16, fontFamily: 'Tajawal_500Medium' }}
         contentStyle={{

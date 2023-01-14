@@ -19,7 +19,9 @@ declare global {
 export interface RootStackParamList {
   Root: NavigatorScreenParams<RootTabParamList> | undefined
   Modal: undefined
-  PropertyDetail: undefined
+  SignUpScreen: { data: any }
+  OTPScreen: { data: any }
+  PropertyDetail: { data: any }
   Appointment: { navigation: any }
 }
 
