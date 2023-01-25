@@ -148,6 +148,9 @@ function RootNavigator({isLoggedIn}) {
       <Stack.Group screenOptions={{ presentation: "modal", headerTitle: "", headerShown: false }}>
         <Stack.Screen name="status" component={ModalScreen} />
       </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: "modal", headerTitle: "", headerShown: false }}>
+        <Stack.Screen name="map" component={MapScreen} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
@@ -244,7 +247,6 @@ function BottomTabNavigator({isLoggedIn}) {
       <BottomTab.Screen name="DateBookScreen" options={{ headerShown: false }} component={DateBookScreen} />
       <BottomTab.Screen name="DetailsScreen" options={{ headerShown: false }} component={DetailsScreen} />
       <BottomTab.Screen name="FavScreen" options={{ headerShown: false }} component={FavScreen} />
-      <BottomTab.Screen name="MapScreen" options={{ headerShown: false }} component={MapScreen} />
       <BottomTab.Screen name="MyAccountScreen" options={{ headerShown: false }} component={MyAccountScreen} />
       <BottomTab.Screen name="MyAuctionsScreen" options={{ headerShown: false }} component={MyAuctionsScreen} />
       <BottomTab.Screen name="MyPropertiesScreen" options={{ headerShown: false }} component={MyPropertiesScreen} />

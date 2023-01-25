@@ -15,7 +15,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,7 +25,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.app.khiaratee"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
@@ -34,7 +40,19 @@
         {
           "photosPermission": "The app accesses your photos to able you to  upload property images."
         }
+      ],
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "maplibre",
+          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoicmFrYW5vbmxpbmUiLCJhIjoiY2xkMm45ZHlsMGE1azNvbWw4ZzJpc2cyYiJ9.7DNkDsOZsQcqJNWyTdIJCw"
+        }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b822c1c1-173f-4d28-b1cd-c5861cdfbd18"
+      }
+    }
   }
 }
