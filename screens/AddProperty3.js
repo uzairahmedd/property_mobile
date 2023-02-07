@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Image,
@@ -18,12 +18,25 @@ import { Svg, Path } from "react-native-svg";
 import Selector from "../components/generic/selector";
 import * as yup from "yup";
 import { Formik } from "formik";
+import useAxios from 'axios-hooks'
 
 import { useFonts } from "@expo-google-fonts/dev";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function AddProperty3({ navigation, route }) {
   let params = route.params // params (form data) from previous screen
+  const [features, setFeatures] = useState([])
+  const [{ data, loading, error }, fetchCategories] = useAxios(
+    'https://mychoice.sa/api/categories'
+  )
+
+  useEffect(() => {
+    if(!data && !loading){
+      fetchCategories()
+    } else {
+      setFeatures(data?.feature ?? [])
+    }
+  }, [data])
 
   const schema = yup.object().shape({
     bedrooms: yup.string().required("Number of bedrooms required."),
@@ -32,8 +45,10 @@ export default function AddProperty3({ navigation, route }) {
     drawingRooms: yup.string().required("Number of drawing rooms required"),
     numberOfPositions: yup.string().required("Field is required"),
     furnishStatus: yup.string().required("Furnish Status is required"),
+    selectedFeatures: yup.array().required("Feature selection is required"),
   });
 
+  const [selectedFeatures, setSelectedFeatures] = useState([])
   const [bedrooms, setBedrooms] = useState()
   const [bathrooms, setBathrooms] = useState()
   const [lounges, setLounges] = useState()
@@ -41,21 +56,23 @@ export default function AddProperty3({ navigation, route }) {
   const [numberOfPositions, setNumberOfPositions] = useState();
   const [furnishStatus, setFurnishStatus] = useState();
 
-  const handleSubmit = ({ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus }) => {
+  const handleSubmit = ({ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus, selectedFeatures }) => {
     setBedrooms(bedrooms)
     setBathrooms(bathrooms)
     setLounges(lounges)
     setDrawingRooms(drawingRooms)
     setNumberOfPositions(numberOfPositions)
     setFurnishStatus(furnishStatus)
+    setSelectedFeatures(selectedFeatures)
     
-    params = {...params, ...{ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus }}
+    params = {...params, ...{ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus, selectedFeatures }}
     navigation.navigate('AddProperty4', params)
   };
 
-  const renderNumberOptionSelect = (fieldName, setFieldValue, state, limit) => {
+  const renderNumberOptionSelect = (fieldName, setFieldValue, state, limit, first = '') => {
     let array = [];
-    for (let index = 0; index < limit; index++) {
+    let iter = first ? -1 : 0;
+    for (let index = iter; index < limit; index++) {
       array.push(
         <TouchableOpacity
           onPress={() => setFieldValue(fieldName, index + 1)}
@@ -74,7 +91,7 @@ export default function AddProperty3({ navigation, route }) {
         >
           <Text style={[
             state == (index + 1) ? { color: 'white' } : { color: 'black' }
-          ]}>{index + 1}</Text>
+          ]}>{first && index == -1 ? first : index + 1}</Text>
         </TouchableOpacity>
       );
       
@@ -119,7 +136,7 @@ export default function AddProperty3({ navigation, route }) {
       </View>
       
       <Formik
-        initialValues={{ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus }}
+        initialValues={{ bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus, selectedFeatures }}
         onSubmit={handleSubmit}
         validationSchema={schema}
         validateOnChange={false}
@@ -132,7 +149,7 @@ export default function AddProperty3({ navigation, route }) {
           values,
           errors,
         }) => {
-          const { bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus } = values;
+          const { bedrooms, bathrooms, lounges, drawingRooms, numberOfPositions, furnishStatus, selectedFeatures } = values;
           console.log('--', errors)
           return (
             <>
@@ -140,7 +157,7 @@ export default function AddProperty3({ navigation, route }) {
                 <View><Text>غرف النوم </Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginVertical: 20 }}>
                   {
-                    renderNumberOptionSelect('bedrooms', setFieldValue, bedrooms, 6)
+                    renderNumberOptionSelect('bedrooms', setFieldValue, bedrooms, 6, 'استوديو')
                   }
                 </View>
               </View>
@@ -160,7 +177,7 @@ export default function AddProperty3({ navigation, route }) {
                 <View><Text>صالات</Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginVertical: 20 }}>
                   {
-                    renderNumberOptionSelect('lounges', setFieldValue, lounges, 6)
+                    renderNumberOptionSelect('lounges', setFieldValue, lounges, 6, 'غير متوفر')
                   }
                 </View>
               </View>
@@ -170,7 +187,7 @@ export default function AddProperty3({ navigation, route }) {
                 <View><Text>مجالس</Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginVertical: 20 }}>
                   {
-                    renderNumberOptionSelect('drawingRooms', setFieldValue, drawingRooms, 6)
+                    renderNumberOptionSelect('drawingRooms', setFieldValue, drawingRooms, 6, 'غير متوفر')
                   }
                 </View>
               </View>
@@ -195,7 +212,44 @@ export default function AddProperty3({ navigation, route }) {
                 />
               </View>
               { errors.furnishStatus ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.furnishStatus} </Text> : null}
-
+              
+              <View style={{ marginVertical: 10 }}>
+                <View><Text>تحديد مميزات العقار</Text></View>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', flexWrap: 'wrap', marginTop: 20 }}>
+                {
+                  features.map(item => (
+                    <TouchableOpacity
+                      onPress={() => {
+                        if(selectedFeatures.includes(item.id)){
+                          arr = selectedFeatures.filter(val => val != item.id);
+                          setFieldValue('selectedFeatures', arr);
+                        } else {
+                          setFieldValue('selectedFeatures', [...selectedFeatures, item.id]);
+                        }
+                      }}
+                      style={[
+                        {
+                          borderRadius: 8,
+                          borderWidth: 0.5,
+                          paddingHorizontal: 10,
+                          paddingVertical: 7,
+                          textAlign: 'center',
+                          backgroundColor: 'white',
+                          margin: 5
+                          
+                        },
+                        selectedFeatures.includes(item.id) ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
+                      ]}
+                    >
+                      <Text style={[
+                        selectedFeatures.includes(item.id) ? { color: 'white' } : { color: 'black' }
+                      ]} >{item.ar_name}</Text>
+                    </TouchableOpacity>
+                  ))
+                }
+                </View>
+              </View>
+              { errors.selectedFeatures ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.selectedFeatures} </Text> : null}
               <View
                 style={{
                   marginVertical: 10,

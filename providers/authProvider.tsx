@@ -2,8 +2,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useContext } from 'react';
-import { useEffect, useState, createContext, useMemo } from 'react';
+import { I18nManager } from 'react-native';
+import { useEffect, useContext, useState, createContext, useMemo } from 'react';
 
 const AuthContext = createContext({
   signIn: async (token: string) => {},
@@ -18,6 +18,8 @@ const AuthProvider = ({children, state, dispatch}: any) => {
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
+        I18nManager.allowRTL(true);
+        I18nManager.forceRTL(true);
         SplashScreen.preventAutoHideAsync();
 
         // Load fonts

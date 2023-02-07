@@ -12,7 +12,7 @@ import { RootTabScreenProps } from "../types";
 import NavBar from "../components/models/NavBar";
 import useAppReducer from '../hooks/useAuthReducer';
 import AuthProvider from '../providers/authProvider';
-import { Modal, Portal, Button, Provider, TextInput } from 'react-native-paper';
+import { Modal, Portal, Button, Provider, TextInput, FAB } from 'react-native-paper';
 
 export default function HomeScreen({ navigation, isLoggedIn }: RootTabScreenProps<"Home">) {
   const [listings, setListings] = useState()
@@ -118,11 +118,17 @@ export default function HomeScreen({ navigation, isLoggedIn }: RootTabScreenProp
                 }}
               > تقديم </Button>
             </View>
-          
           </Modal>
         // )
       }
       {/* </Portal> */}
+
+      <FAB
+        icon="map"
+        label="عرض الخريطة"
+        style={styles.fab}
+        onPress={() => navigation.navigate('MapScreen', { data: listings?.data ?? [] })}
+      />
 
       <View style={{ position: "absolute", bottom: 10, width:"100%" }}>
         <NavBar navigation={navigation} isLoggedIn={isLoggedIn} unauthAction={setVisible} />
@@ -157,4 +163,10 @@ const styles = StyleSheet.create({
     height: 1,
     width: "80%",
   },
+  fab: {
+    position: 'absolute',
+    bottom: 100,
+    left: 30
+
+  }
 });

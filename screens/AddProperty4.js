@@ -85,14 +85,14 @@ export default function AddProperty4({ navigation, route }) {
     
     params = {...params, ...{ youtubeLink, processedImages }}
     console.log(params)
-    publishListing({
-      data: {
-        ...params,
-        max_price: params.price,
-        min_price: params.price,
-      }
-    })
-    // navigation.navigate('AddProperty7', params)
+    // publishListing({
+    //   data: {
+    //     ...params,
+    //     max_price: params.price,
+    //     min_price: params.price,
+    //   }
+    // })
+    navigation.navigate('AddProperty5', params)
   }
   
 

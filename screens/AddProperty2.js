@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Image,
@@ -6,7 +6,9 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator
 } from "react-native";
+import useAxios from 'axios-hooks'
 
 import {
   TextInput,
@@ -23,15 +25,27 @@ import { AntDesign } from "@expo/vector-icons";
 
 export default function AddProperty2({ navigation, route }) {
   let params = route.params // params (form data) from previous screen
-
+  const [categories, setCategories] = useState([])
   const schema = yup.object().shape({
     category: yup.string().required("Category is required"),
-    type: yup.string().required("Property type is required"),
+    // type: yup.string().required("Property type is required"),
     price: yup.string().required("Price is required"),
     hasElectricity: yup.string().required("Field is required"),
     hasWaterMeter: yup.string().required("Field is required"),
     numberOfStreets: yup.string().required("Number of streets required"),
   });
+
+  const [{ data, loading, error }, fetchCategories] = useAxios(
+    'https://mychoice.sa/api/categories'
+  )
+
+  useEffect(() => {
+    if(!data && !loading){
+      fetchCategories()
+    } else {
+      setCategories(data?.category ?? [])
+    }
+  }, [data])
 
   const [category, setCategory] = useState('sale')
   const [type, setType] = useState('')
@@ -40,6 +54,31 @@ export default function AddProperty2({ navigation, route }) {
   const [hasWaterMeter, setHasWaterMeter] = useState(false);
   const [numberOfStreets, setNumberOfStreets] = useState();
   const [streetInfo, setStreetInfo] = useState();
+
+  const renderCategory = ({value, setFieldValue}) => {
+    return categories.map(item => (
+      <TouchableOpacity
+        onPress={() => setFieldValue('category', item.id)}
+        style={[
+          {
+            borderRadius: 8,
+            borderWidth: 0.5,
+            paddingHorizontal: 10,
+            paddingVertical: 7,
+            textAlign: 'center',
+            backgroundColor: 'white',
+            margin: 5
+            
+          },
+          value == item.id ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
+        ]}
+      >
+        <Text style={[
+          value == item.id ? { color: 'white' } : { color: 'black' }
+        ]} >{item.ar_name}</Text>
+      </TouchableOpacity>
+    ))
+  }
 
   const handleSubmit = ({ category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo }) => {
     setCategory(category)
@@ -82,6 +121,9 @@ export default function AddProperty2({ navigation, route }) {
     }
     return array
   }
+
+  if (loading) return <ActivityIndicator size='small' />
+  if (error) return <Text>Error!</Text>
 
   return (
     <ScrollView
@@ -134,14 +176,13 @@ export default function AddProperty2({ navigation, route }) {
           errors,
         }) => {
           const { category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo } = values;
-          console.log('--', errors)
           return (
             <>
-              <View style={{ marginVertical: 10 }}>
+              {/* <View style={{ marginVertical: 10 }}>
                 <View><Text>طبيعة العقار</Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
                   <TouchableOpacity
-                    onPress={() => setFieldValue('category', 'residential')}
+                    onPress={() => setFieldValue('type', 'residential')}
                     style={[
                       {
                         borderRadius: 8,
@@ -153,15 +194,15 @@ export default function AddProperty2({ navigation, route }) {
                         margin: 5
                         
                       },
-                      category == 'residential' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
+                      type == 'residential' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
                     ]}
                   >
                     <Text style={[
-                      category == 'residential' ? { color: 'white' } : { color: 'black' }
+                      type == 'residential' ? { color: 'white' } : { color: 'black' }
                     ]} >سكني </Text>
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={() => setFieldValue('category', 'commercial')}
+                    onPress={() => setFieldValue('type', 'commercial')}
                     style={[
                       {
                         borderRadius: 8,
@@ -172,62 +213,26 @@ export default function AddProperty2({ navigation, route }) {
                         backgroundColor: 'white',
                         margin: 5
                       },
-                      category == 'commercial' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
+                      type == 'commercial' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
                     ]}
                   >
                     <Text style={[
-                      category == 'commercial' ? { color: 'white' } : { color: 'black' }
+                      type == 'commercial' ? { color: 'white' } : { color: 'black' }
                     ]}>تجاري </Text>
                   </TouchableOpacity>
                 </View>
               </View>
-              { errors.category ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.category} </Text> : null}
+              { errors.type ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.category} </Text> : null} */}
 
               <View style={{ marginVertical: 10 }}>
                 <View><Text>نوع العقار</Text></View>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-                  <TouchableOpacity
-                    onPress={() => setFieldValue('type', 'apartment')}
-                    style={[
-                      {
-                        borderRadius: 8,
-                        borderWidth: 0.5,
-                        paddingHorizontal: 10,
-                        paddingVertical: 7,
-                        textAlign: 'center',
-                        backgroundColor: 'white',
-                        margin: 5
-                        
-                      },
-                      type == 'apartment' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
-                    ]}
-                  >
-                    <Text style={[
-                      type == 'apartment' ? { color: 'white' } : { color: 'black' }
-                    ]} >شقة </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setFieldValue('type', 'villa')}
-                    style={[
-                      {
-                        borderRadius: 8,
-                        borderWidth: 0.5,
-                        paddingHorizontal: 10,
-                        paddingVertical: 7,
-                        textAlign: 'center',
-                        backgroundColor: 'white',
-                        margin: 5
-                      },
-                      type == 'villa' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
-                    ]}
-                  >
-                    <Text style={[
-                      type == 'villa' ? { color: 'white' } : { color: 'black' }
-                    ]}>فيلا </Text>
-                  </TouchableOpacity>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+                  {
+                    renderCategory({value: category, setFieldValue: setFieldValue})
+                  }
                 </View>
               </View>
-              { errors.type ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.type} </Text> : null}
+              { errors.category ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.type} </Text> : null}
 
               <View style={{ marginVertical: 10 }}>
                 <Text>قيمة العقار</Text>

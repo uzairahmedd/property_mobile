@@ -23,8 +23,6 @@ import SignUpScreen from "./screens/SignUpScreen";
 import React, { useEffect, useState } from "react";
 
 export default function App() {
-  I18nManager.allowRTL(true);
-  I18nManager.forceRTL(true);
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
   const [height,setHeight] =useState(0)
