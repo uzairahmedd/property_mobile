@@ -44,7 +44,7 @@ const ListItem = ({ data, style }: Props) => {
 
           <View style={styles.priceView}>
             <Text style={[styles.badgeText, { fontWeight: 'bold' }]}>
-              {price.price} ر.س
+              {price?.price} ر.س
             </Text>
           </View>
         </ImageBackground>

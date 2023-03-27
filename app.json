@@ -42,6 +42,11 @@
           "photosPermission": "The app accesses your photos to able you to  upload property images."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b822c1c1-173f-4d28-b1cd-c5861cdfbd18"
+      }
+    }
   }
 }

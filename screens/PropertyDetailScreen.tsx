@@ -152,7 +152,7 @@ export default function PropertyDetailScreen({navigation, route} : RootStackScre
             color: '#292071'
           }}
         >
-          {price.price} ر.س
+          {price?.price} ر.س
         </Text>
 
         <Divider style={{ marginVertical: 20 }} />

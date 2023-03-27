@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator
 } from "react-native";
 import useAxios from 'axios-hooks'
 import {
@@ -48,7 +49,8 @@ export default function AddProperty4({ navigation, route }) {
         navigation.navigate('status', { status: 'error', error: error.response.data })
       }
       else if(data){
-        // navigation.navigate('status', params)
+        // console.log('----here---', data)
+        navigation.navigate('status', { status: 'success' })
       }
     }
   }, [data,  error])
@@ -84,17 +86,18 @@ export default function AddProperty4({ navigation, route }) {
     }
     
     params = {...params, ...{ youtubeLink, processedImages }}
-    console.log(params)
-    // publishListing({
-    //   data: {
-    //     ...params,
-    //     max_price: params.price,
-    //     min_price: params.price,
-    //   }
-    // })
-    navigation.navigate('AddProperty5', params)
+    // console.log(params)
+    publishListing({
+      data: {
+        ...params,
+        max_price: params.price,
+        min_price: params.price,
+      }
+    })
+    // navigation.navigate('AddProperty5', params)
   }
   
+  if (loading) return <ActivityIndicator size='small' />
 
   return (
     <ScrollView

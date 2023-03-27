@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { I18nManager } from 'react-native';
+import * as Updates from "expo-updates";
 import { useEffect, useContext, useState, createContext, useMemo } from 'react';
 
 const AuthContext = createContext({
@@ -18,8 +19,11 @@ const AuthProvider = ({children, state, dispatch}: any) => {
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
-        I18nManager.allowRTL(true);
-        I18nManager.forceRTL(true);
+        if(!I18nManager.isRTL){
+          I18nManager.allowRTL(true);
+          I18nManager.forceRTL(true);
+          Updates.reloadAsync();
+        }
         SplashScreen.preventAutoHideAsync();
 
         // Load fonts
@@ -33,6 +37,7 @@ const AuthProvider = ({children, state, dispatch}: any) => {
         })
       } catch (e) {
         // We might want to provide this error information to an error reporting service
+        console.log('Error: loadResourcesAndDataAsync', e)
         console.warn(e);
       } finally {
         setLoadingComplete(true);

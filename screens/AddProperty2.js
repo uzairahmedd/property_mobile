@@ -13,7 +13,8 @@ import useAxios from 'axios-hooks'
 import {
   TextInput,
   Text,
-  Button
+  Button,
+  Modal
 } from 'react-native-paper';
 import {Picker} from '@react-native-picker/picker';
 import { Svg, Path } from "react-native-svg";
@@ -28,7 +29,7 @@ export default function AddProperty2({ navigation, route }) {
   const [categories, setCategories] = useState([])
   const schema = yup.object().shape({
     category: yup.string().required("Category is required"),
-    // type: yup.string().required("Property type is required"),
+    loc: yup.array().required("Property location is required"),
     price: yup.string().required("Price is required"),
     hasElectricity: yup.string().required("Field is required"),
     hasWaterMeter: yup.string().required("Field is required"),
@@ -47,7 +48,8 @@ export default function AddProperty2({ navigation, route }) {
     }
   }, [data])
 
-  const [category, setCategory] = useState('sale')
+  const [category, setCategory] = useState('')
+  const [loc, setLoc] = useState('')
   const [type, setType] = useState('')
   const [price, setPrice] = useState('')
   const [hasElectricity, setHasElectricity] = useState(false);
@@ -80,7 +82,7 @@ export default function AddProperty2({ navigation, route }) {
     ))
   }
 
-  const handleSubmit = ({ category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo }) => {
+  const handleSubmit = ({ category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo }) => {    
     setCategory(category)
     setType(type)
     setPrice(price)
@@ -175,55 +177,9 @@ export default function AddProperty2({ navigation, route }) {
           values,
           errors,
         }) => {
-          const { category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo } = values;
+          const { category, type, price, hasElectricity, hasWaterMeter, numberOfStreets, streetInfo, loc } = values;
           return (
             <>
-              {/* <View style={{ marginVertical: 10 }}>
-                <View><Text>طبيعة العقار</Text></View>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-                  <TouchableOpacity
-                    onPress={() => setFieldValue('type', 'residential')}
-                    style={[
-                      {
-                        borderRadius: 8,
-                        borderWidth: 0.5,
-                        paddingHorizontal: 10,
-                        paddingVertical: 7,
-                        textAlign: 'center',
-                        backgroundColor: 'white',
-                        margin: 5
-                        
-                      },
-                      type == 'residential' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
-                    ]}
-                  >
-                    <Text style={[
-                      type == 'residential' ? { color: 'white' } : { color: 'black' }
-                    ]} >سكني </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => setFieldValue('type', 'commercial')}
-                    style={[
-                      {
-                        borderRadius: 8,
-                        borderWidth: 0.5,
-                        paddingHorizontal: 10,
-                        paddingVertical: 7,
-                        textAlign: 'center',
-                        backgroundColor: 'white',
-                        margin: 5
-                      },
-                      type == 'commercial' ? { backgroundColor: '#1DA1F2', color: 'white', borderColor: 'white' } : { backgroundColor: 'white' }
-                    ]}
-                  >
-                    <Text style={[
-                      type == 'commercial' ? { color: 'white' } : { color: 'black' }
-                    ]}>تجاري </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              { errors.type ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.category} </Text> : null} */}
-
               <View style={{ marginVertical: 10 }}>
                 <View><Text>نوع العقار</Text></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
@@ -232,7 +188,7 @@ export default function AddProperty2({ navigation, route }) {
                   }
                 </View>
               </View>
-              { errors.category ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.type} </Text> : null}
+              { errors.category ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.category} </Text> : null}
 
               <View style={{ marginVertical: 10 }}>
                 <Text>قيمة العقار</Text>
@@ -251,6 +207,29 @@ export default function AddProperty2({ navigation, route }) {
                 />    
               </View>
               { errors.price ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.price} </Text> : null}
+
+              <View style={{ marginVertical: 10 }}>
+                <View><Text>حدد إحداثيات الموقع</Text></View>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('AddProperty5', { setFieldValue })}
+                    style={[
+                      {
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        borderRadius: 8,
+                        borderWidth: 0.5,
+                        paddingHorizontal: 10,
+                        paddingVertical: 7,
+                        backgroundColor: 'white',
+                        marginVertical: 5,
+                        height: 55
+                      },
+                    ]}
+                  >
+                    <Text style={{ fontSize: 16 }}>{loc ? loc[0]+ " - " +loc[1] : "اختر موقعا"}</Text>
+                  </TouchableOpacity>
+              </View>
+              { errors.loc ? <Text style={{textAlign: 'left', color: 'red'}}> {errors.loc} </Text> : null}
 
               <View style={{ marginVertical: 10 }}>
                 <View><Text>هل يوجد عداد كهرباء</Text></View>
@@ -360,7 +339,7 @@ export default function AddProperty2({ navigation, route }) {
                   label={ 'معلومات الشارع ' }
                 />
               </View> */}
-              
+
               <View
                 style={{
                   marginVertical: 10,

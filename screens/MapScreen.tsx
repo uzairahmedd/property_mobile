@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  View, Image, Text
+  View, Image, Text, TouchableOpacity
 } from 'react-native'
 import { RootStackScreenProps } from "../types";
 
@@ -16,12 +16,17 @@ export default function MapScreen({navigation, route}:RootStackScreenProps<"MapS
       return (
         <MapboxGL.MarkerView
           coordinate={coordinates}>
-          <Image
-            source={require('../assets/images/placeholder.png')}
-            style={{
-              width: 35,
-              height: 35
-            }}/>
+            <TouchableOpacity style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} onPress={() => {
+                navigation.navigate('PropertyDetail', { data: item })
+              }}>
+              <Text style={{padding: 3, margin: 2, borderRadius: 3, borderWidth: 1, borderColor: "#aaa", backgroundColor: 'white', textAlign: 'center'}}>{item.title}</Text>
+              <Image
+                source={require('../assets/images/placeholder.png')}
+                style={{
+                  width: 35,
+                  height: 35
+                }}/>
+            </TouchableOpacity>
         </MapboxGL.MarkerView>
       )
     })
@@ -29,7 +34,7 @@ export default function MapScreen({navigation, route}:RootStackScreenProps<"MapS
 
   return (
     <View
-      style={{flex:1, paddingTop: 30 /* height: Dimensions.get('window').height */ }}
+      style={{flex:1 /* height: Dimensions.get('window').height */ }}
     >
       
       <MapboxGL.MapView 

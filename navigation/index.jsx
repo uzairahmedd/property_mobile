@@ -145,7 +145,7 @@ function RootNavigator({isLoggedIn}) {
           headerTitle: "",
         })}
       />
-      <Stack.Group screenOptions={{ presentation: "modal", headerTitle: "", headerShown: false }}>
+      <Stack.Group screenOptions={{ presentation: "card", headerTitle: "", headerShown: true }}>
         <Stack.Screen name="status" component={ModalScreen} />
         <Stack.Screen name="MapScreen" component={MapScreen} />
       </Stack.Group>

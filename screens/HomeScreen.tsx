@@ -130,7 +130,7 @@ export default function HomeScreen({ navigation, isLoggedIn }: RootTabScreenProp
         onPress={() => navigation.navigate('MapScreen', { data: listings?.data ?? [] })}
       />
 
-      <View style={{ position: "absolute", bottom: 10, width:"100%" }}>
+      <View style={{ position: "absolute", bottom: 20, width:"100%" }}>
         <NavBar navigation={navigation} isLoggedIn={isLoggedIn} unauthAction={setVisible} />
       </View>
     </View>
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     width:"100%",
     backgroundColor: 'white',
     padding: 20,
-    height: '60%',
+    height: '70%',
     zIndex: 1000,
     top: Dimensions.get('screen').height / 3
   },
@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
-    bottom: 100,
-    left: 30
+    bottom: 110,
+    left: 20
 
   }
 });

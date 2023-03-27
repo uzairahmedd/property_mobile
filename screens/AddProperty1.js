@@ -84,8 +84,8 @@ export default function AddProperty1({ navigation }) {
         <View style={stylesheet.style_Rectangle_}></View>
         <View style={stylesheet.style_Rectangle_}></View>
         <View style={stylesheet.style_Rectangle_}></View>
-        <View style={stylesheet.style_Rectangle_}></View>
-        <View style={stylesheet.style_Rectangle_}></View>
+        {/* <View style={stylesheet.style_Rectangle_}></View>
+        <View style={stylesheet.style_Rectangle_}></View> */}
       </View>
       <Formik
         initialValues={{ title, purpose, description, address, area, region }}
