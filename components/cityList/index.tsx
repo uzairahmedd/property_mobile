@@ -14,7 +14,7 @@ const CityList = () => {
         horizontal
         style={{flexDirection:"row"}}
         snapToEnd
-        inverted={true}
+        // inverted={true}
         nestedScrollEnabled={true}
         showsHorizontalScrollIndicator={false}
         data={[

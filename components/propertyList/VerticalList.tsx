@@ -1,23 +1,23 @@
 import { StyleSheet, FlatList, View } from 'react-native'
 import { Text } from 'react-native-paper'
 import Badge from '../badge'
-import ListItem from '../porpertyListItem'
+import VerticalListItem from '../porpertyListItem/VerticalListItem'
 interface Props {
   data: any,
   title?: string
   label: string
 }
 
-const List = ({ data, title, label }: Props) => {
+const VerticalList = ({ data, title, label }: Props) => {
   // console.log(data)
   return (
-    <View style={{ marginVertical: 10 }}>
+    <View style={{ marginVertical: 5 }}>
       <View
         style={{
           flexDirection: 'row',
           justifyContent: 'flex-start',
           alignItems: 'center',
-          paddingVertical: 5
+        //   paddingVertical: 5
         }}
       >
         <Badge
@@ -25,20 +25,15 @@ const List = ({ data, title, label }: Props) => {
           style={{ borderWidth: 1, borderColor: '#C9009D' }}
           textStyle={{ color: '#C9009D' }}
         />
-        <Text style={{ fontSize: 18, marginVertical: 10 }}>{title}</Text>
+        <Text style={{ fontSize: 16, marginVertical: 10 }}>{title}</Text>
       </View>
       <FlatList
-        horizontal
-        snapToEnd
-        inverted={true}
-        nestedScrollEnabled={true}
-        showsHorizontalScrollIndicator={false}
         data={data}
-        renderItem={({item, index}) => <ListItem data={item} />}
+        renderItem={({item, index}) => <VerticalListItem data={item} />}
         keyExtractor={(item) => item.id}
       />
     </View>
   )
 }
 
-export default List
+export default VerticalList

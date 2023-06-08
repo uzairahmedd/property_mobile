@@ -34,6 +34,12 @@ export interface RootTabParamList {
   AddProperty: undefined
 }
 
+export type RootDrawerParamList = {
+  Home: string;
+  AddProperty: undefined
+  Login: undefined
+};
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
   CompositeScreenProps<
     BottomTabScreenProps<RootTabParamList, Screen>,

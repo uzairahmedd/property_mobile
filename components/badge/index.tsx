@@ -20,14 +20,15 @@ export default Badge
 
 const styles = StyleSheet.create({
   badge: {
-    width: 50,
+    width: 40,
     height: 30,
     borderRadius: 5,
     justifyContent: 'center',
-    margin: 10
+    margin: 8
   },
   badgeText: {
     textAlign: 'center',
-    color: 'white'
+    color: 'white',
+    fontSize: 14
   }
 })

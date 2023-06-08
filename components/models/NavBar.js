@@ -12,13 +12,11 @@ import {
 export default function NavBar({navigation, isLoggedIn, unauthAction}) {
   const routes = navigation.getState()?.routes ?? [];
   const currentScreen = routes.length > 0 ? routes[routes.length - 1]?.name : ''
-  console.log('---nav---', currentScreen)
   const handlePress = (screenName) => {
-    if(!isLoggedIn && unauthAction){
-      console.log('--here--', isLoggedIn, unauthAction)
+    if(!isLoggedIn && unauthAction && screenName != 'Home'){
       unauthAction(true)
     } else {
-      console.log(navigation)
+      // console.log(navigation)
       navigation.navigate(screenName)
     }
   }

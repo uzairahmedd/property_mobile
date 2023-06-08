@@ -39,10 +39,10 @@ export default function SignUpScreen({ navigation, route }: RootStackScreenProps
   )
 
   const schema = yup.object().shape({
-    name: yup.string().required("Name is required."),
-    email: yup.string().required("Email is required"),
-    password: yup.string().required("Password is required"),
-    phone: yup.string().required("Phone number is required"),
+    name: yup.string().required("مطلوب اسم"),
+    email: yup.string().required("البريد الالكتروني مطلوب"),
+    password: yup.string().required("كلمة المرور مطلوبة"),
+    phone: yup.string().required("رقم الهاتف مطلوب"),
   });
 
   const handleSubmit = ({email, name, phone, password}: any) => {
@@ -84,7 +84,7 @@ export default function SignUpScreen({ navigation, route }: RootStackScreenProps
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
         paddingHorizontal: 20,
-        paddingTop: 60,
+        paddingTop: 40,
       }}
     >
       <View

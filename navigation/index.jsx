@@ -14,6 +14,12 @@ import {
   DefaultTheme,
   DarkTheme,
 } from "@react-navigation/native";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItem,
+  DrawerItemList,
+} from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import {
@@ -37,6 +43,7 @@ import {
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
+  RootDrawerParamList
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import i18n from "../locale/index";
@@ -65,25 +72,159 @@ import SearchScreen from "../screens/SearchScreen";
 import SearchScreenAuction from "../screens/SearchScreenAuction";
 import SettingsScreen from "../screens/SettingsScreen";
 import TermsScreen from "../screens/TermsScreen";
+import * as Updates from "expo-updates";
 
-import PriceModel from "../components/models/PriceModel";
-import AppBar from "../components/models/AppBar";
-import AuctionStatusModel from "../components/models/AuctionStatusMode";
-import CityModel from "../components/models/CityModel";
-import FloorModel from "../components/models/FloorModel";
-import PhoneModel from "../components/models/PhoneModel";
-import PropertyTypeModel from "../components/models/PropertyTypeModel";
-import RoomsModel from "../components/models/RoomsModel";
-import SortModel from "../components/models/SortModel";
-import NavBar from "../components/models/NavBar";
-
+const Drawer = createDrawerNavigator();
 export default function Navigation({ colorScheme, isLoggedIn }) {
+
+  function AppDrawerContent(props) {
+    return (
+      <DrawerContentScrollView {...props} style={{backgroundColor: 'white'}} contentContainerStyle={{ flex: 1 }}>
+        {/*all of the drawer items*/}
+        <Logo style={{alignSelf: 'center', marginBottom: 10}}/>
+        <DrawerItemList {...props}/>
+        <View
+          style={{ flex: 1, justifyContent: "center", marginVertical: 0 }}
+        >
+          {/* here's where you put your logout drawer item*/}
+          {isLoggedIn ? (
+            <DrawerItem
+              label={i18n.t('logout')}
+              onPress={() => {
+                signOut();
+              }}
+              style={{
+                backgroundColor: "#FF3C82",
+                borderRadius: 25,
+                marginBottom: 50,
+                padding: 0,
+              }}
+              labelStyle={{
+                textAlign: "center",
+                alignSelf: "center",
+                marginLeft: 30,
+                color: "white",
+              }}
+            />
+          ) : (
+            <DrawerItem
+              label={i18n.t('login')}
+              onPress={() => {
+                props.navigation.navigate("Login");
+              }}
+              style={{
+                backgroundColor: "#339BFF",
+                borderRadius: 25,
+                marginBottom: 50,
+                padding: 0,
+              }}
+              labelStyle={{
+                textAlign: "center",
+                alignSelf: "center",
+                marginLeft: 30,
+                color: "white",
+              }}
+            />
+          )}
+        </View>
+      </DrawerContentScrollView>
+    );
+  }
+
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
       <RootNavigator isLoggedIn={isLoggedIn} />
+    </NavigationContainer>
+  )
+  return (
+    <NavigationContainer
+      linking={LinkingConfiguration}
+      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+    >
+      <Drawer.Navigator
+        initialRouteName="Home"
+        drawerContent={(props) => <AppDrawerContent {...props} />}
+        screenOptions={({ navigation }) => ({
+          headerStatusBarHeight: 0,
+          headerTitle: () => <Logo />,
+          drawerType: "front",
+          drawerStyle: {
+            borderRadius: 15,
+            width: 200,
+            // paddingTop: 50,
+          },
+          headerLeft: () => (
+            <Pressable
+              onPress={() => navigation.toggleDrawer()}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+              })}
+            >
+              {/* <Image
+                style={{
+                  width: 20,
+                  height: 20,
+                  marginHorizontal: 20,
+                  tintColor: 'black',
+                  transform: [{ scaleX: I18nManager.isRTL ? 1 : -1 }],
+                }}
+                source={require("../assets/images/icon-back.png")}
+              /> */}
+
+              <FontAwesome style={{marginHorizontal: 20,}} size={20} name="bars" />
+            </Pressable>
+          ),
+          headerRight: () => (
+            <Pressable
+              onPress={() => {
+                I18nManager.forceRTL(!I18nManager.isRTL);
+                Updates.reloadAsync();
+              }}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+              })}
+            >
+              <Text
+                style={{
+                  width: 30,
+                  height: 20,
+                  marginHorizontal: 20,
+                  fontSize: 18,
+                  fontWeight: "bold",
+                  color: "#FF3C82",
+                }}
+              >
+                {I18nManager.isRTL ? "EN" : "AR"}
+              </Text>
+            </Pressable>
+          ),
+          headerStyle: {
+            height: 60,
+            // backgroundColor: 'blue'
+          },
+        })}
+      >
+        <Drawer.Screen name={i18n.t("home")}>
+          {(props) => <RootNavigator {...props} isLoggedIn={isLoggedIn} />}
+        </Drawer.Screen>
+        {isLoggedIn && (
+          <>
+            <Drawer.Screen name={i18n.t("profile")} component={RootNavigator} />
+            <Drawer.Screen
+              name={i18n.t("documents")}
+              component={DocumentsScreen}
+            />
+            <Drawer.Screen
+              name={i18n.t("vehicles")}
+              component={VehiclesScreen}
+            />
+            {/* <DrawerItem label="Logout" onPress={() => props.navigation.navigate("Login")} /> */}
+          </>
+        )}
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
@@ -97,7 +238,7 @@ const Stack = createNativeStackNavigator();
 const Logo = ({ style = {} }) => {
   return (
     <Image
-      style={[{ width: 110, height: 30, margin: 10 }, style]}
+      style={[{ width: 110, height: 30 }, style]}
       resizeMode="contain"
       source={require("../assets/images/logo.png")}
     />
@@ -110,9 +251,10 @@ function RootNavigator({isLoggedIn}) {
     >
       <Stack.Screen
         name="Root"
-        component={(props) => <BottomTabNavigator {...props} isLoggedIn={isLoggedIn} />}
         options={{ headerShown: false }}
-      />
+      >
+        {(props) => <BottomTabNavigator {...props} isLoggedIn={isLoggedIn} />}
+      </Stack.Screen>
       <Stack.Screen
         name="PropertyDetail"
         component={PropertyDetailScreen}
@@ -162,27 +304,6 @@ const BottomTab = createNativeStackNavigator();
 
 function BottomTabNavigator({isLoggedIn}) {
   const colorScheme = useColorScheme();
-  // let initRoute = "AddOfferScreen";
-  // initRoute = "AddProperty1";
-  // initRoute = "AddProperty2";
-  // initRoute = "AddProperty3";
-  // initRoute = "AddProperty4";
-  // initRoute = "AddProperty5";
-  // initRoute = "AddProperty6";
-  // initRoute = "AddProperty7";
-  // initRoute = "AddProperty8";
-  // initRoute = "DateBookScreen";
-  // initRoute = "DetailsScreen";
-  // initRoute = "FavScreen";
-  // initRoute = "MapScreen";
-  // initRoute = "MyAccountScreen";
-  // initRoute = "MyAuctionsScreen";
-  // initRoute = "MyPropertiesScreen";
-  // initRoute = "PrivacyScreen";
-  // initRoute = "SearchScreen";
-  // initRoute = "SearchScreenAuction";
-  // initRoute = "SettingsScreen";
-  // initRoute = "TermsScreen";
   return (
     <BottomTab.Navigator
       // initialRouteName={initRoute}
@@ -192,6 +313,15 @@ function BottomTabNavigator({isLoggedIn}) {
       }}
       
     >
+      {/* <BottomTab.Screen
+        name="Home"
+        options={({ navigation }) => ({
+          headerShown: false
+        })}
+      >
+        { (props) => <HomeScreen {...props} isLoggedIn={isLoggedIn} /> }
+      </BottomTab.Screen> */}
+
       <BottomTab.Screen
         name="Home"
         options={({ navigation }) => ({
@@ -218,7 +348,7 @@ function BottomTabNavigator({isLoggedIn}) {
       >
         { (props) => <HomeScreen {...props} isLoggedIn={isLoggedIn} /> }
       </BottomTab.Screen>
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="AddProperty"
         component={() => null}
         options={{
@@ -232,7 +362,7 @@ function BottomTabNavigator({isLoggedIn}) {
             />
           ),
         }}
-      />
+      /> */}
       <BottomTab.Screen name="AddOfferScreen" options={{ headerShown: false }} component={AddOfferScreen} />
       <BottomTab.Screen name="AddProperty1" options={{ headerShown: false }} component={AddProperty1} />
       <BottomTab.Screen name="AddProperty2" options={{ headerShown: false }} component={AddProperty2} />
