@@ -71,7 +71,6 @@ export default function HomeScreen({ navigation, isLoggedIn }: RootTabScreenProp
     }
 
     if(!otpReqLoading && otpData && otpData.status == "error"){
-      console.log('---hala---', otpData)
       if(otpData.message == "User doesn't exist"){
         setPhoneError("")
         setShowRegistrationError(true)
@@ -130,9 +129,17 @@ export default function HomeScreen({ navigation, isLoggedIn }: RootTabScreenProp
                   value={phone}
                   onChangeText={transformPhoneNumber}
                 />
-                { phoneError ? <Text style={{textAlign: 'left', color: 'red', marginVertical: 10}}> {phoneError} </Text> : null}
+                { phoneError && <Text style={{textAlign: 'left', color: 'red', marginVertical: 10}}> {phoneError} </Text> }
+                { showRegistrationError && (
+                  <View>
+                    <Text style={{textAlign: 'left', color: 'red', marginVertical: 10, fontSize: 14}}> {'يبدو أنه ليس لديك حساب. '}
+                      <Text style={{textAlign: 'left', color: 'blue', marginVertical: 10, fontSize: 14}} onPress={() => navigation.navigate('SignUpScreen', { data: { phone: phone } })}>{'الرجاء التسجيل'}</Text>
+
+                    </Text>
+                  </View> 
+                  )}
                 <Button 
-                  style={{ width: '100%', backgroundColor: '#1DA1F2', marginTop: 20}}
+                  style={{ width: '100%', backgroundColor: '#1DA1F2', marginTop: 30}}
                   mode="contained"
                   onPress={handleSubmit}
                   contentStyle={{
@@ -194,8 +201,10 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
+    // bottom: 60,
     bottom: 120,
     backgroundColor: 'white',
-    left: 15
+    left: 15,
+    zIndex: 2,
   }
 });

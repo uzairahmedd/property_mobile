@@ -47,12 +47,12 @@ export default function NavBar({navigation, isLoggedIn, unauthAction}) {
             style={[{ width: 45, height: 45 }, currentScreen == 'SearchScreenAuction' && { tintColor: '#1DA1F2' }]} 
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handlePress('SettingsScreen')} style={stylesheet.style_Home}>
+        {/* <TouchableOpacity onPress={() => handlePress('SettingsScreen')} style={stylesheet.style_Home}>
           <Image 
             source={require('../../assets/images/more.png')}
             style={[{ width: 45, height: 45 }, currentScreen == 'SettingsScreen' && { tintColor: '#1DA1F2' }]} 
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   )

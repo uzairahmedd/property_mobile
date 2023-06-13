@@ -131,14 +131,14 @@ export default function Navigation({ colorScheme, isLoggedIn }) {
     );
   }
 
-  return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
-      <RootNavigator isLoggedIn={isLoggedIn} />
-    </NavigationContainer>
-  )
+  // return (
+  //   <NavigationContainer
+  //     linking={LinkingConfiguration}
+  //     theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+  //   >
+  //     <RootNavigator isLoggedIn={isLoggedIn} />
+  //   </NavigationContainer>
+  // )
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
@@ -326,7 +326,7 @@ function BottomTabNavigator({isLoggedIn}) {
         name="Home"
         options={({ navigation }) => ({
           title: "Home",
-          // headerShown: false,
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => <Logo />,
           headerLeft: () => {
